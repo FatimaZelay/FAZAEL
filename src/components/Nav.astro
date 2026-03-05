@@ -1,7 +1,7 @@
 <header>
-    <button>
-        <img src="/src/assets/icon-bordeaux.svg" alt="">
-    </button>
+    <a class="logo">
+        <img src="/src/assets/logo-home.svg" alt="Logo of FAZAEL CO" width="150" height="75">
+    </a>
 
     <nav>
         <ul>
@@ -11,18 +11,36 @@
             <li><a href="/">Contact us</a></li>
         </ul>
     </nav>
+
+    <button class="menu">
+        <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"> menu
+    </button>
+
 </header>
 
+
 <style>
-    button {
-        all: unset;
+    header {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--primary-bone);
+        position: sticky;
+        top: 0;
     }
+
+    .logo {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     nav {
-        position:fixed;
-        left:0;
-        right:0;
-        top:0;
-        bottom:0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        translate: -100% 0%;
         @media (min-width: 375px) {
             display: flex;
             justify-content: center;
@@ -51,5 +69,18 @@
         text-decoration: none;
         text-transform: uppercase; 
         color: var(--primary-bordeaux);
+    }
+
+    .menu {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-coco-gothic-regular);
+        color: var(--primary-bordeaux);
+        padding: 1em;
+        &:hover {
+            cursor: pointer;
+        }
     }
 </style>

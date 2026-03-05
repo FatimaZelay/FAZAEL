@@ -19,7 +19,7 @@
 body {
     /* Colors */
     --primary-bordeaux: #520405;
-    --primary-bone: #520405;
+    --primary-bone: #EEEDEB;
     
     --secundary-bordeaux: #520405;
     --secundary-beige: #C9C3B7;
@@ -29,7 +29,7 @@ body {
     --neutral-black: #000000;
     --neutral-browngreen: #716559;
     --neutral-grey: #D9D9D9;
-    
+
     /* Font-family */
     --font-coco-gothic-regular: 'Coco Gothic Regular', sans-serif;
     --font-coco-gothic-bold: 'Coco Gothic Bold', sans-serif;
