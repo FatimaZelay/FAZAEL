@@ -1,8 +1,55 @@
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Our Work</a></li>
-        <li><a href="/">Work ethic</a></li>
-        <li><a href="/">Contact us</a></li>
-    </ul>
-</nav>
+<header>
+    <button>
+        <img src="/src/assets/icon-bordeaux.svg" alt="">
+    </button>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Our Work</a></li>
+            <li><a href="/">Work ethic</a></li>
+            <li><a href="/">Contact us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    button {
+        all: unset;
+    }
+    nav {
+        position:fixed;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        @media (min-width: 375px) {
+            display: flex;
+            justify-content: center;
+            padding: 1em 0;
+        }
+    }
+
+    ul {
+        list-style: none;
+        @media (min-width: 375px) {
+            display: flex;
+            justify-items: center;
+            gap: 1em;
+            padding: 1em 3em 1em 3em;
+            background-color: var(--neutral-white);
+            width: 25em; 
+        }  
+    }
+
+    li {
+        flex-direction: row;
+    }
+
+    a {
+        font-family: var(--font-coco-gothic-regular);
+        text-decoration: none;
+        text-transform: uppercase; 
+        color: var(--primary-bordeaux);
+    }
+</style>
