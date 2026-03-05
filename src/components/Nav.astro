@@ -1,6 +1,28 @@
+<script>
+    import { fade } from "astro:transitions";
+
+    const menuButton = document.querySelector(".open-menu") as HTMLElement;
+    const nav = document.querySelector("nav") as HTMLElement;
+    const closeMenuButton = document.querySelector(
+        ".close-menu",
+    ) as HTMLElement;
+
+    menuButton.addEventListener("click", openMenu); //https://docs.astro.build/en/reference/astro-syntax/#dynamic-attributes
+    closeMenuButton.addEventListener("click", closeMenu);
+
+    function openMenu() {
+        nav.classList.add("open");
+    }
+
+    function closeMenu() {
+        nav.classList.remove("open");
+    }
+</script>
+
 <header>
     <a class="logo">
-        <img src="/src/assets/logo-home.svg" alt="Logo of FAZAEL CO" width="150" height="75">
+        <img src="/src/assets/logo-home.svg" alt="Logo of FAZAEL CO" width="150" height="75"
+        />
     </a>
 
     <nav>
@@ -10,14 +32,16 @@
             <li><a href="/">Work ethic</a></li>
             <li><a href="/">Contact us</a></li>
         </ul>
+
+        <button class="close-menu">
+            <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"/> sluit
+        </button>
     </nav>
 
-    <button class="menu">
-        <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"> menu
+    <button class="open-menu">
+        <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"/> menu
     </button>
-
 </header>
-
 
 <style>
     header {
@@ -35,14 +59,18 @@
     }
 
     nav {
+        display: flex;
+        justify-items: center;
+        align-items: center;
         position: fixed;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
         translate: -100% 0%;
+        transition: translate 0.3s;
+        background-color: var(--primary-bone);
         @media (min-width: 375px) {
-            display: flex;
             justify-content: center;
             padding: 1em 0;
         }
@@ -56,22 +84,26 @@
             gap: 1em;
             padding: 1em 3em 1em 3em;
             background-color: var(--neutral-white);
-            width: 25em; 
-        }  
+            width: 25em;
+        }
     }
 
     li {
-        flex-direction: row;
+        padding: .5em 0 .5em 0;
+        @media (min-width: 375px) {
+            flex-direction: row;
+        }
     }
 
     a {
         font-family: var(--font-coco-gothic-regular);
         text-decoration: none;
-        text-transform: uppercase; 
+        text-transform: uppercase;
         color: var(--primary-bordeaux);
     }
 
-    .menu {
+    .open-menu,
+    .close-menu {
         all: unset;
         display: flex;
         flex-direction: column;
@@ -82,5 +114,15 @@
         &:hover {
             cursor: pointer;
         }
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 0.1em;
+        right: 0.1em;
+    }
+
+    nav.open {
+        translate: 0% 0%;
     }
 </style>
