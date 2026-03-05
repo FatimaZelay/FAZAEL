@@ -20,12 +20,15 @@
 </script>
 
 <header>
-    <a class="logo">
-        <img src="/src/assets/logo-home.svg" alt="Logo of FAZAEL CO" width="150" height="75"
-        />
+    <a class="logo-mobile">
+        <img src="/src/assets/logo-home.svg" alt="Logo of FAZAEL CO" width="150" height="75"/>
     </a>
 
     <nav>
+        <a class="logo-desktop">
+            <img src="/src/assets/logo-home.svg" alt="Logo of FAZAEL CO" width="150" height="75"/>
+        </a>
+
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/">Our Work</a></li>
@@ -50,9 +53,23 @@
         background-color: var(--primary-bone);
         position: sticky;
         top: 0;
+        @media (min-width: 768px) {
+            position: relative;
+        }
+    }
+    
+    .logo-desktop {
+        display: none;
+        @media (min-width: 768px) {
+            display: block;
+            padding-top: 10em;
+        }
     }
 
-    .logo {
+    .logo-mobile {
+        @media (min-width: 768px) {
+            display: none;
+        }
         &:hover {
             cursor: pointer;
         }
@@ -70,12 +87,15 @@
         transition: translate 0.3s;
         background-color: var(--primary-bone);
         @media (min-width: 768px) {
+            display: flex;
+            flex-direction: column;
             position: static;
             translate: none;
             padding: 0;
             background: none;
             justify-content: center;
             padding: 1em 0;
+            position: absolute;
         }
     }
 
@@ -83,12 +103,12 @@
         list-style: none;
         @media (min-width: 768px) {
             display: flex;
-            justify-conten: center;
             gap: 1em;
             padding: 1em 3em 1em 3em;
-            right: 2em;
             background-color: var(--neutral-white);
             width: 25em;
+            border-radius: 1em;
+            box-shadow: 1em 1em 1em var(--neutral-grey);
         }
     }
 
