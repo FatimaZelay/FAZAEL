@@ -72,6 +72,7 @@
     }
 
     .logo-mobile {
+        display: block;
         @media (min-width: 768px) {
             display: none;
         }
@@ -88,8 +89,8 @@
         right: 0;
         top: 0;
         bottom: 0;
-        translate: -100% 0%;
-        transition: translate 0.3s;
+        translate: 0% -100%;
+        transition: translate 0.6s ease;
         background-color: var(--primary-bone);
         @media (min-width: 768px) {
             display: flex;
@@ -120,8 +121,17 @@
 
     li {
         padding: .5em 0 .5em 0;
-        @media (min-width: 375px) {
+        &:hover{
+            cursor: pointer;
+            transform: translateX(.5em);
+            transition: transform 0.3s ease;
+        }
+        @media (min-width: 768px) {
             flex-direction: row;
+            &:hover{
+                transform: none;
+                transition: none;
+        }
         }
     }
 
