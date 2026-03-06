@@ -1,0 +1,172 @@
+<script>
+    const menuButton = document.querySelector(".open-menu") as HTMLElement;
+    const nav = document.querySelector("nav") as HTMLElement;
+    const closeMenuButton = document.querySelector(
+        ".close-menu",
+    ) as HTMLElement;
+
+    menuButton.addEventListener("click", openMenu); //https://docs.astro.build/en/reference/astro-syntax/#dynamic-attributes
+    closeMenuButton.addEventListener("click", closeMenu);
+
+    function openMenu() {
+        nav.classList.add("open");
+    }
+
+    function closeMenu() {
+        nav.classList.remove("open");
+    }
+</script>
+
+<header>
+    <a class="logo-mobile">
+        <img src="/src/assets/logo-home.svg" alt="Logo of FAZAEL CO" width="150" height="75">
+    </a>
+
+    <nav>
+        <a class="logo-desktop">
+            <img src="/src/assets/logo-home.svg" alt="Logo of FAZAEL CO" width="150" height="75">
+        </a>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Our Work</a></li>
+            <li><a href="/">Work ethic</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/">Contact us</a></li>
+        </ul>
+
+        <button class="close-menu">
+            <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"> sluit
+        </button>
+    </nav>
+
+    <button class="open-menu">
+        <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"> menu
+    </button>
+</header>
+
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--primary-bone);
+        position: sticky;
+        top: 0;
+        @media (min-width: 768px) {
+            position: relative;
+        }
+    }
+    
+    .logo-desktop {
+        display: none;
+        @media (min-width: 768px) {
+            display: block;
+            padding-top: 10em;
+        }
+
+        &:hover {
+            cursor: pointer;
+            scale: 1.05;
+            transition: scale 0.3s ease;
+        }
+    }
+
+    .logo-mobile {
+        display: block;
+        @media (min-width: 768px) {
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        translate: 0% -100%;
+        transition: translate 0.6s ease;
+        background-color: var(--primary-bone);
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            position: static;
+            translate: none;
+            padding: 0;
+            background: none;
+            justify-content: center;
+            padding: 1em 0;
+            position: absolute;
+        }
+    }
+
+    ul {
+        list-style: none;
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: center;
+            gap: 3em;
+            padding: 1em 1em 1em 1em;
+            background-color: var(--neutral-white);
+            width: 40em;
+            border-radius: 1em;
+            box-shadow: 1em 1em 1em var(--neutral-grey);
+        }
+    }
+
+    li {
+        padding: .5em 0 .5em 0;
+        &:hover{
+            cursor: pointer;
+            transform: translateX(.5em);
+            transition: transform 0.3s ease;
+        }
+        @media (min-width: 768px) {
+            flex-direction: row;
+            &:hover{
+                transform: none;
+                transition: none;
+        }
+        }
+    }
+
+    a {
+        font-family: var(--font-coco-gothic-regular);
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--primary-bordeaux);
+    }
+
+    .open-menu,
+    .close-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-coco-gothic-regular);
+        color: var(--primary-bordeaux);
+        padding: 1em;
+        background-color: none;
+        border: none;
+        &:hover {
+            cursor: pointer;
+        }
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 0.1em;
+        right: 0.1em;
+    }
+
+    nav.open {
+        translate: 0% 0%;
+    }
+</style>
