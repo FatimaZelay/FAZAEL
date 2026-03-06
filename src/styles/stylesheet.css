@@ -16,6 +16,11 @@
     font-weight: 300;
 }
 
+@font-face {
+    font-family: 'Anastasia Regular';
+    src: url('../fonts/Anastasia-Regular.ttf') format('truetype');
+}
+
 body {
     /* Colors */
     --primary-bordeaux: #520405;
@@ -34,4 +39,5 @@ body {
     --font-coco-gothic-regular: 'Coco Gothic Regular', sans-serif;
     --font-coco-gothic-bold: 'Coco Gothic Bold', sans-serif;
     --font-coco-gothic-light: 'Coco Gothic Light', sans-serif;
+    --font-anastasia-regular: 'Anastasia Regular', sans-serif;
 }
