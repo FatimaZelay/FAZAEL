@@ -40,4 +40,6 @@ body {
     --font-coco-gothic-bold: 'Coco Gothic Bold', sans-serif;
     --font-coco-gothic-light: 'Coco Gothic Light', sans-serif;
     --font-anastasia-regular: 'Anastasia Regular', sans-serif;
+    --font-sans: 'CocoGothic', sans-serif;
+    --font-script: 'Anastasia', cursive;
 }
