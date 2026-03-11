@@ -1,7 +1,7 @@
 <footer>
-    <ul>
+    <ul class="footer-nav">
         <li>
-            <a href="#">our Work</a>
+            <a href="#">our work</a>
         </li>
         
         <li>
@@ -17,7 +17,7 @@
         </li>
     </ul>
 
-    <ul>
+    <ul class="contact-info">
         <li>
             <p>copyright © 2026 Fazael</p>
         </li>
@@ -27,6 +27,44 @@
         </li>
 
         <li>
-            <a href="#top">back to top</a></li>
+            <a href="#top">back to top</a>
+        </li>
     </ul>
 </footer>
+
+<style>
+    footer {
+        background-color: var(--primary-bordeaux);
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a, p {
+        text-decoration: none;
+        font-family: var(--font-coco-gothic-regular);
+        color: var(--neutral-white);
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: .3em;
+        padding-bottom: 2em;
+        @media (min-width: 375px) {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 2em;
+        }
+    }
+</style>
