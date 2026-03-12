@@ -35,6 +35,7 @@
 <style>
     footer {
         background-color: var(--primary-bordeaux);
+        margin-top: 15em;
     }
 
     .footer-nav {
@@ -44,6 +45,10 @@
         gap: 2em;
         padding-top: 2em;
         padding-bottom: 2em;
+    }
+
+    .footer-nav li {
+        font-size: var(--font-size-s);
     }
 
     li {
@@ -61,10 +66,16 @@
         flex-direction: column;
         gap: .3em;
         padding-bottom: 2em;
-        @media (min-width: 375px) {
+        margin-left: .5em;
+        @media (min-width: 768px) {
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             padding: 2em;
         }
+    }
+
+    .contact-info li {
+        font-size: var(--font-size-base);
     }
 </style>
