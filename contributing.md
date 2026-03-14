@@ -11,6 +11,7 @@
 - In VS code use 1 tab for indentation. Use a tab size of 4. In VS Code, go to Settings and search for “tab”, then set it to 4.
 - Merge main into your feature branch before opening a Pull Request
 - Branches and Pull Requests should be created from main
+- Write in the pull request at the specific line of code the review by clicking on the + on the line of code.
 
 ### Project Board
 - To do: what still needs to be done.
@@ -39,6 +40,9 @@
 - Nest media queries, hover states and focus states
 - Use `@Supports` for newer features and for animations
 - Use @layer to declare a cascade layer to define order
+- Begin the CSS property or CSS class 1 tab after `<style>`
+<img width="260" height="330" alt="image" src="https://github.com/user-attachments/assets/e048c135-9186-49dd-9fb3-b63063d215ee" />
+
 
 
 ### Javascript Code conventions
