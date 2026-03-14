@@ -25,7 +25,7 @@ body {
     /* Colors */
     --primary-bordeaux: #520405;
     --primary-bone: #EEEDEB;
-    
+
     --secundary-bordeaux: #520405;
     --secundary-beige: #C9C3B7;
     --secundary-cream: #EFEFE6;
@@ -39,7 +39,9 @@ body {
     --font-coco-gothic-regular: 'Coco Gothic Regular', sans-serif;
     --font-coco-gothic-bold: 'Coco Gothic Bold', sans-serif;
     --font-coco-gothic-light: 'Coco Gothic Light', sans-serif;
+    --font-coco-gothic: 'CocoGothic', sans-serif;
     --font-anastasia-regular: 'Anastasia Regular', sans-serif;
+    --font-anastasia-italic: 'Anastasia', cursive;
 
     /* Font sizes */
     --font-size-xxl: 3rem;      /* 48px */
