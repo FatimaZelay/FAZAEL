@@ -1,0 +1,85 @@
+<footer>
+    <ul class="footer-nav">
+        <li>
+            <a href="#">our work</a>
+        </li>
+        
+        <li>
+            <a href="#">contact</a>
+        </li>
+        
+        <li>
+            <a href="#">work ethic</a>
+        </li>
+        
+        <li>
+            <a href="#">terms & conditions</a>
+        </li>
+    </ul>
+
+    <ul class="contact-info">
+        <li>
+            copyright © 2026 Fazael
+        </li>
+
+        <li>
+            <a href="mailto:fazael.contact@gmail.com">fazael.contact@gmail.com</a>
+        </li>
+
+        <li>
+            <a href="#top">back to top</a>
+        </li>
+    </ul>
+</footer>
+
+<style>
+    footer {
+        background-color: var(--primary-bordeaux);
+        margin-top: 15em;
+        padding: 2em;
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+
+    .footer-nav li {
+        font-size: var(--font-size-s);
+        &:hover{
+            cursor: pointer;
+            transform: translateX(.5em);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a, p, li {
+        text-decoration: none;
+        font-family: var(--font-coco-gothic-regular);
+        color: var(--neutral-white);
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: .3em;
+        padding: 2em 0;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .contact-info li {
+        font-size: var(--font-size-base);
+    }
+</style>
