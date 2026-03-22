@@ -32,6 +32,7 @@ const tl = gsap.timeline();
         ease: 'power4.out',   
     },"=0.4");
 
+    // Progressive Enhancement: If GSAP is not loaded, show the loader without animation. https://gsap.com/community/forums/topic/39201-best-practices-for-autoalpha-progressive-enhancement/
     if (typeof window.gsap === "undefined") {
       document.querySelector(".progressive-enhancement").classList.add("js");
     }
