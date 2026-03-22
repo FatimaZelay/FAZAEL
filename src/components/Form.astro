@@ -14,3 +14,89 @@
         <button class="contact-submit" type="submit">submit</button>
     </form>
 </section>
+
+<style>
+ .contact {
+    background: var(--primary-bone);
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-title {
+    font-family: var(--font-coco-gothic-light);
+    font-size: 2em;
+    color: var(--primary-bordeaux);
+    letter-spacing: 0.08em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-row {
+    display: flex;
+    gap: 4rem;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20rem;
+}
+
+.contact-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--neutral-black);
+    padding: 0.4rem 0;
+    font-family: var(--font-coco-gothic-light);
+    font-size: 1rem;
+    color: var(--neutral-black);
+    text-align: center;
+    outline: none;
+    width: 100%;
+}
+
+.contact-input::placeholder {
+    color: var(--neutral-black);
+}
+
+.contact-input--message {
+    margin-bottom: 3rem;
+}
+
+.contact-submit {
+    background: var(--primary-bordeaux);
+    color: var(--neutral-white);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 3rem;
+    font-family: var(--font-coco-gothic-light);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.contact-submit:hover {
+    opacity: 0.85;
+}
+
+@media (min-width: 600px) {
+    .contact-row {
+        gap: 6rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .contact {
+        padding: 6rem 2rem;
+    }
+}
+</style>
