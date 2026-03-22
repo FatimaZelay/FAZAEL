@@ -1,14 +1,7 @@
-# Astro Starter Kit: Basics
-
-```sh
-npm create astro@latest -- --template basics
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## About FAZAEL
+We develop professional websites for female entrepreneurs who want to strengthen their online presence. Our agency supports clients in creating websites that are both user-friendly and visually appealing to their target audience. In addition to website development, we assist clients in the design process by transforming abstract ideas into a clear and consistent visual identity that reflects the company’s brand. Throughout the project, we focus on the design, structure, and functionality of the website to ensure a high-quality result. We consider it essential that every website is not only visually attractive but also fully functional and accessible to users.
 
 ## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
@@ -26,8 +19,6 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -40,7 +31,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
