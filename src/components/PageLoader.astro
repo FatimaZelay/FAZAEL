@@ -12,16 +12,30 @@ const tl = gsap.timeline();
 		stagger: 0.05, //https://gsap.com/resources/getting-started/Staggers/
 		ease: "power2.out" 
 		})
-    
+
+    .fromTo(
+    ".logo",
+        { scale: 1, opacity: 1 },
+        
+        {
+            scale: 1.2,
+            duration: 1,
+            ease: "sine.inOut",
+            repeat: 2,
+            yoyo: true,
+        },"0.2")
+
     .to('.page-loader', {
         autoAlpha: 0, 
         duration: 0.1,
         ease: 'power4.out',   
     },"=0.4");
+
+    
 </script>
 
 <section class="page-loader">
-    <img src="/src/assets/fazael-transparent.svg" alt="Fazael Logo" width="600" height="300">
+    <img class="logo" src="/src/assets/fazael-transparent.svg" alt="Fazael Logo" width="600" height="300">
     <h1 class="intro-text">Fazael</h1>
 </section>
 
