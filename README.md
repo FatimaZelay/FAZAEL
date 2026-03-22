@@ -6,17 +6,35 @@ We develop professional websites for female entrepreneurs who want to strengthen
 ```text
 /
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+│   ├── fonts/
+│   │   ├── Anastasia.ttf
+│   │   ├── Coco-Gothic-Bold-trial.ttf
+│   │   ├── Coco-Gothic-Light-trial.ttf
+│   │   └── Coco-Gothic-Regular-trial.ttf
+│   ├── favicon.ico
+│   └── logo.svg
+├── src/
+│   ├── assets/
+│   │   ├── background.svg
+│   │   ├── icon-bordeaux.svg
+│   │   └── logo-home.svg
+│   ├── components/
+│   │   ├── Footer.astro
+│   │   ├── HeroSection.astro
+│   │   └── Nav.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   ├── blog.astro
+│   │   └── index.astro
+│   └── styles/
+│       └── stylesheet.css
+├── astro.config.mjs
+├── contributing.md
+├── package-lock.json
+├── package.json
+├── README.md
+└── tsconfig.json
 ```
 
 ## 🧞 Commands
@@ -31,3 +49,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+
+Copyright © FAZAEL
