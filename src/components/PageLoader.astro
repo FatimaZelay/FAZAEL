@@ -1,0 +1,54 @@
+<script>
+import { gsap } from "gsap";
+import SplitText from "gsap/SplitText";
+
+let split = new SplitText(".intro-text", { type: "chars" });
+const tl = gsap.timeline();
+
+tl.from(split.chars, {
+		duration: 1,
+		opacity: 0,
+		y: 50,
+		stagger: 0.05, //https://gsap.com/resources/getting-started/Staggers/
+		ease: "power2.out" 
+		})
+
+        .to(".intro-text", {
+        opacity: 0,
+        y: -30,
+        duration: 0.6,
+        ease: "power2.in"
+        }, "+=1") //delay of 1 second after the previous animation
+</script>
+
+<section class="page-loader">
+    <img src="/src/assets/fazael-transparent.svg" alt="Fazael Logo" width="600" height="300">
+    <h1>Fazael</h1>
+</section>
+
+<style>
+    .page-loader {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        background-color: var(--primary-bone);
+    }
+
+    .page-loader h1 {
+        font-family: var(--font-coco-gothic-regular);
+        color: var(--neutral-black);
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 12%;
+        font-size: 2.5rem;
+        margin-top: 20px;
+    }
+</style>
