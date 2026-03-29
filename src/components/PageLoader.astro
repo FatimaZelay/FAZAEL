@@ -1,0 +1,75 @@
+<script>
+import { gsap } from "gsap";
+import SplitText from "gsap/SplitText";
+
+let split = new SplitText(".intro-text", { type: "chars" });
+const tl = gsap.timeline();
+
+    tl.from(split.chars, {
+		duration: 1,
+		opacity: 0,
+		y: 50,
+		stagger: 0.05, //https://gsap.com/resources/getting-started/Staggers/
+		ease: "power2.out" 
+		})
+
+    .fromTo(
+    ".logo",
+        { scale: 1, opacity: 1 },
+        
+        {
+            scale: 1.2,
+            duration: 1,
+            ease: "sine.inOut",
+            repeat: 2,
+            yoyo: true,
+        },"0.2")
+
+    .to('.page-loader', {
+        autoAlpha: 0, 
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power4.out',   
+    },"=0.4");
+
+    // Progressive Enhancement: If GSAP is not loaded, show the loader without animation. https://gsap.com/community/forums/topic/39201-best-practices-for-autoalpha-progressive-enhancement/
+    if (typeof window.gsap === "undefined") {
+      document.querySelector(".progressive-enhancement").classList.add("js");
+    }
+</script>
+
+<section class="page-loader progressive-enhancement">
+    <img class="logo" src="/src/assets/fazael-transparent.svg" alt="Fazael Logo" width="600" height="300">
+    <h1 class="intro-text">Fazael</h1>
+</section>
+
+<style>
+    .page-loader {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        background-color: var(--primary-bone);
+    }
+
+    .page-loader h1 {
+        font-family: var(--font-coco-gothic-regular);
+        color: var(--neutral-black);
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 12%;
+        font-size: 2.5rem;
+        margin-top: 20px;
+    }
+
+    .progressive-enhancement {
+        display: none;
+    }
+</style>

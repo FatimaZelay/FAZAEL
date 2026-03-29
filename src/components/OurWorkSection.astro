@@ -1,0 +1,161 @@
+<section class="work">
+    <header class="work-header">
+        <h2 class="work-title">OUR WORK</h2>
+    </header>
+
+    <ul class="work-gallery">
+        <li class="project">
+            <figure class="project-card">
+                <img src="/images/paraosaigpost.png" alt="ProjectOne" />
+                <figcaption class="overlay">
+                    <span class="overlay-text">View Project</span>
+                </figcaption>
+            </figure>
+        </li>
+
+        <li class="project">
+            <figure class="project-card">
+                <img src="/images/Ahdafi.png" alt="ProjectTwo" />
+                <figcaption class="overlay">
+                    <span class="overlay-text">View Project</span>
+                </figcaption>
+            </figure>
+        </li>
+
+        <li class="project">
+            <figure class="project-card">
+                <img src="/images/Webdesign.png" alt="ProjectThree" />
+                <figcaption class="overlay">
+                    <span class="overlay-text">View Project</span>
+                </figcaption>
+            </figure>
+        </li>
+
+        <li class="project">
+            <figure class="project-card">
+                <img src="/images/Ahdafi.png" alt="ProjectFour" />
+                <figcaption class="overlay">
+                    <span class="overlay-text">View Project</span>
+                </figcaption>
+            </figure>
+        </li>
+
+        <li class="project">
+            <figure class="project-card">
+                <img src="/images/Webdesign.png" alt="ProjectFive" />
+                <figcaption class="overlay">
+                    <span class="overlay-text">View Project</span>
+                </figcaption>
+            </figure>
+        </li>
+
+        <li class="project">
+            <figure class="project-card">
+                <img src="/images/paraosaigpost.png" alt="ProjectSix" />
+                <figcaption class="overlay">
+                    <span class="overlay-text">View Project</span>
+                </figcaption>
+            </figure>
+        </li>
+    </ul>
+</section>
+
+<style>
+    .work {
+        background: var(--primary-bone);
+        padding: 4rem 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (min-width: 900px) {
+            padding: 6rem 2rem;
+        }
+    }
+
+    .work-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .work-title {
+        font-family: var(--font-coco-gothic);
+        font-size: var(--font-size-l);
+        color: var(--primary-bordeaux);
+        letter-spacing: 0.08em;
+
+        @media (min-width: 900px) {
+            font-size: var(--font-size-xl);
+        }
+    }
+
+    .work-gallery {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        @media (min-width: 600px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 900px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .project {
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--neutral-white);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        transition:
+            transform 0.15s ease,
+            box-shadow 0.25s ease;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+
+            .project-card img {
+                filter: blur(8px) brightness(0.9);
+            }
+
+            .overlay {
+                opacity: 1;
+            }
+        }
+    }
+
+    .project-card {
+        position: relative;
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: filter 0.2s ease;
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .overlay-text {
+        color: white;
+        font-family: var(--font-coco-gothic-bold);
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+</style>
