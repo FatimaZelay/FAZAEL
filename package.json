@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^8.3.4",
     "astro": "^5.17.1",
-    "gsap": "^3.14.2"
+    "resend": "^6.9.4"
   }
 }
