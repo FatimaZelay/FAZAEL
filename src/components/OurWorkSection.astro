@@ -98,27 +98,31 @@
             transform 0.15s ease,
             box-shadow 0.25s ease;
         cursor: pointer;
-    }
 
-    .project:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+
+            .project-card img {
+                filter: blur(8px) brightness(0.9);
+            }
+
+            .overlay {
+                opacity: 1;
+            }
+        }
     }
 
     .project-card {
         margin: 0;
         position: relative;
-    }
 
-    .project-card img {
-        width: 100%;
-        display: block;
-        object-fit: cover;
-        transition: filter 0.2s ease;
-    }
-
-    .project:hover .project-card img {
-        filter: blur(8px) brightness(0.9);
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: filter 0.2s ease;
+        }
     }
 
     .overlay {
@@ -129,10 +133,6 @@
         justify-content: center;
         opacity: 0;
         transition: opacity 0.4s ease;
-    }
-
-    .project:hover .overlay {
-        opacity: 1;
     }
 
     .overlay-text {
