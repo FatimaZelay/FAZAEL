@@ -45,6 +45,10 @@
     padding: 4rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+
+    @media (min-width: 900px) {
+        padding: 6rem 2rem;
+    }
 }
 
 .contact-header {
@@ -73,6 +77,10 @@
     width: 100%;
     justify-content: center;
     margin-bottom: 20rem;
+
+    @media (min-width: 600px) {
+        gap: 6rem;
+    }
 }
 
 .contact-input {
@@ -86,11 +94,12 @@
     text-align: center;
     outline: none;
     width: 100%;
+
+    &::placeholder {
+        color: var(--neutral-black);
+    }
 }
 
-.contact-input::placeholder {
-    color: var(--neutral-black);
-}
 
 .contact-input--message {
     margin-bottom: 3rem;
@@ -106,21 +115,10 @@
     font-size: 1rem;
     cursor: pointer;
     transition: opacity 0.2s ease;
-}
 
-.contact-submit:hover {
-    opacity: 0.85;
-}
-
-@media (min-width: 600px) {
-    .contact-row {
-        gap: 6rem;
+    &:hover {
+        opacity: 0.85;
     }
 }
 
-@media (min-width: 900px) {
-    .contact {
-        padding: 6rem 2rem;
-    }
-}
 </style>
