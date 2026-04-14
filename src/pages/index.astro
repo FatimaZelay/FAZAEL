@@ -1,81 +1,18 @@
+---
+import PageLoader from '../components/PageLoader.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from "../components/HeroSection.astro";
+import Form from '../components/Form.astro';
+import OurWorkSection from '../components/OurWorkSection.astro';
+---
 
-<body>
-	<div class="wrapper">
-		<section class="logo">
-			<img src="/logo.svg" alt="Fazael Co Logo" />
-		</section>
-
-		<h1>Coming Soon</h1>
-
-		<p>
-			Our website is currently under construction.<br />
-			Something beautiful is on its way.
-		</p>
-	</div>
-</body>
-
-<style>
-	body {
-		/* your variables */
-		--primary-bordeaux: #520405;
-		--primary-bone: #eeedeb;
-
-		--font-coco-gothic-regular: "Coco Gothic Regular", sans-serif;
-		--font-anastasia-regular: "Anastasia Regular", cursive;
-
-		margin: 0;
-		height: 100vh;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		background: var(--primary-bone);
-		color: var(--primary-bordeaux);
-	}
-
-
-	.wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	gap: 10px;
-	transform: translateY(-90px);
-}
-
-
-	.logo {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.logo img {
-		width: 300px;
-		margin-bottom: 5px;
-	}
-
-	.brand {
-		font-family: var(--font-coco-gothic-regular);
-		letter-spacing: 4px;
-		font-size: 0.8rem;
-		color: black;
-	}
-
-
-	h1 {
-		font-family: var(--font-anastasia-regular);
-		font-size: 5rem;
-		font-weight: normal;
-	}
-
-
-	p {
-		font-family: var(--font-coco-gothic-regular);
-		font-size: 1rem;
-		line-height: 1.6;
-		max-width: 420px;
-	}
-</style>
+<Layout>
+	<PageLoader />
+	<Nav />
+	<HeroSection />
+	<OurWorkSection />
+	<Form />
+  	<Footer />
+</Layout>
