@@ -1,0 +1,110 @@
+<main class="main">
+    <h1 class="page-title">PRIVACY STATEMENT</h1>
+
+    <section class="section" id="introduction">
+        <h2 class="section-title">1. Introduction</h2>
+        <p class="body-text">
+            Contrary to popular belief, Lorem Ipsum is not simply random text...
+        </p>
+    </section>
+
+    <section class="section" id="data">
+        <h2 class="section-title">2. Data we collect</h2>
+        <p class="body-text">We collect information you provide directly...</p>
+    </section>
+
+    <section class="section" id="usage">
+        <h2 class="section-title">3. How we use it</h2>
+        <p class="body-text">
+            We use your data to provide, improve, and personalize our
+            services...
+        </p>
+    </section>
+
+    <section class="section" id="cookies">
+        <h2 class="section-title">4. Cookies</h2>
+        <p class="body-text">
+            Our site uses cookies to enhance your experience...
+        </p>
+    </section>
+
+    <section class="section" id="thirdparties">
+        <h2 class="section-title">5. Third parties</h2>
+        <p class="body-text">
+            We may share information with trusted third party service
+            providers...
+        </p>
+    </section>
+
+    <section class="section" id="retention">
+        <h2 class="section-title">6. Retention</h2>
+        <p class="body-text">
+            We retain your personal data only as long as necessary...
+        </p>
+    </section>
+
+    <section class="section" id="rights">
+        <h2 class="section-title">7. Your rights</h2>
+        <p class="body-text">
+            You have the right to access, correct, or delete your personal
+            data...
+        </p>
+    </section>
+
+    <section class="section" id="contact">
+        <h2 class="section-title">8. Contact</h2>
+
+        <p class="contact-text">
+            If you have any questions, contact us at
+            <a href="mailto:fazael.contact@gmail.com">
+                fazael.contact@gmail.com
+            </a>
+            or use our
+            <a href="/contact">contact form</a>.
+        </p>
+    </section>
+</main>
+
+<style>
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2.5rem, 5vw, 3.75rem);
+        max-width: 37.5rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem;
+    }
+
+    .section-title {
+        font-family:
+            var(--font-anastasia-italic), var(--font-anastasia-regular);
+        color: var(--primary-bordeaux);
+        font-weight: normal;
+        font-size: clamp(var(--font-size-base), 3vw, var(--font-size-l));
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .page-title {
+        font-family: var(--font-anastasia-regular);
+        color: var(--primary-bordeaux);
+        text-align: center;
+        font-weight: normal;
+        font-size: clamp(var(--font-size-s), 4vw, var(--font-size-m));
+    }
+
+    .contact-text a {
+        color: var(--primary-bordeaux);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .contact-text a:hover {
+        text-decoration: underline;
+        opacity: 0.8;
+    }
+    a:focus-visible {
+        outline: 2px solid var(--primary-bordeaux);
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
+</style>
