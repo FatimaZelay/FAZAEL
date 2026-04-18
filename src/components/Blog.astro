@@ -25,13 +25,6 @@
 </section>
 
 <style>
-    .blog-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0 1em;
-    }
-
     .blogs {
         display: flex;
         flex-direction: column;
@@ -44,12 +37,11 @@
         }
     }
 
-    .blog-list {
-        @media (min-width: 768px) {
-            display: flex;
-            justify-content: end;
-            gap: 2em;
-        }
+    .blog-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1em;
     }
 
     h2 {
@@ -63,22 +55,12 @@
         text-align: center;
     }
 
-    p {
-        font-size: var(--font-size-base);
-        font-family: var(--font-inter-regular);
-    }
-
-    h3 {
-        font-family: var(--font-inter-regular);
-        font-weight: 400;
-        font-size: var(--font-size-m);
-        color: var(--primary-bordeaux);
-        flex-grow: 1;
-
-    }
-
-    .description {
-        font-family: var(--font-inter-regular);
+    .blog-list {
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: end;
+            gap: 2em;
+        }
     }
 
     article {
@@ -88,6 +70,23 @@
         flex-direction: column;
         row-gap: .75em;
         margin-top: 2.5em;
+    }
+
+    h3 {
+        font-family: var(--font-inter-regular);
+        font-weight: 400;
+        font-size: var(--font-size-m);
+        color: var(--primary-bordeaux);
+        flex-grow: 1;
+    }
+
+    p {
+        font-size: var(--font-size-base);
+        font-family: var(--font-inter-regular);
+    }
+
+    .description {
+        font-family: var(--font-inter-regular);
     }
 
     a {
