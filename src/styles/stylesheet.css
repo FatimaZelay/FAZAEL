@@ -1,4 +1,45 @@
 @font-face {
+    font-family: 'Inter Light';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Inter Regular';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter Italic Regular';
+    src: url('../fonts/Inter-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter Medium';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Inter semiBold';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Inter Bold';
+    src: url('../fonts/Inter.ttf') format('truetype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Anastasia Regular';
+    src: url('../fonts/Anastasia-Regular.ttf') format('truetype');
+}
+
+/* @font-face {
     font-family: 'Coco Gothic Regular';
     src: url('../fonts/Coco-Gothic-Regular-trial.ttf') format('truetype');
     font-weight: normal;
@@ -14,12 +55,8 @@
     font-family: 'Coco Gothic Light';
     src: url('../fonts/Coco-Gothic-Light-trial.ttf') format('truetype');
     font-weight: 300;
-}
+} */
 
-@font-face {
-    font-family: 'Anastasia Regular';
-    src: url('../fonts/Anastasia-Regular.ttf') format('truetype');
-}
 
 body {
     /* Colors */
@@ -36,10 +73,16 @@ body {
     --neutral-grey: #D9D9D9;
 
     /* Font-family */
-    --font-coco-gothic-regular: 'Coco Gothic Regular', sans-serif;
+    /* --font-coco-gothic-regular: 'Coco Gothic Regular', sans-serif;
     --font-coco-gothic-bold: 'Coco Gothic Bold', sans-serif;
     --font-coco-gothic-light: 'Coco Gothic Light', sans-serif;
-    --font-coco-gothic: 'CocoGothic', sans-serif;
+    --font-coco-gothic: 'CocoGothic', sans-serif; */
+    --font-inter-light: 'Inter Light', sans-serif;
+    --font-inter-regular: 'Inter Regular', sans-serif;
+    --font-inter-italic-regular: 'Inter Italic Regular', sans-serif cursive;
+    --font-inter-medium: 'Inter Medium', sans-serif;
+    --font-inter-semiBold: 'Inter SemiBold', sans-serif;
+    --font-inter-bold: 'Inter Bold', sans-serif;
     --font-anastasia-regular: 'Anastasia Regular', sans-serif;
     --font-anastasia-italic: 'Anastasia', cursive;
 
@@ -58,3 +101,4 @@ body {
     padding: 0;
     margin: 0;
 }
+

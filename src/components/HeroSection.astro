@@ -1,6 +1,6 @@
 <section class="hero">
     <h1>
-        We build high performing
+        We build accessible
         <span class="script">Websites</span>
         and make your vision come into reality
     </h1>
@@ -13,7 +13,9 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding-top: 10em;
+        @media (min-width: 768px) {
+            padding-top: 10em;
+        }
     }
 
     .hero-content {
@@ -23,7 +25,7 @@
     .hero h1 {
         line-height: 1.5;
         font-weight: 400;
-        font-family: var(--font-coco-gothic);
+        font-family: var(--font-inter-regular);
         color: var(--primary-bordeaux);
         max-width: 20em;
     }
