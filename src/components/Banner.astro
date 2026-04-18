@@ -76,6 +76,18 @@
         display: flex;
         column-gap: 2em;
         list-style: none;
+        animation: infinite-banner 30s linear infinite;
+        width: max-content; 
+    }
+    
+
+    @keyframes infinite-banner {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-40%);
+        }
     }
 
     li {
