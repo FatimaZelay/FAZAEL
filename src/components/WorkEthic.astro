@@ -2,9 +2,46 @@
     <h1>Work Ethic</h1>
     <article>
         <p class="number">01</p>
-        <h2>First meeting</h2>
+        <h2 class="heading">First meeting</h2>
         <p class="description">Understanding your vision, wishes and branding.</p>
     </article>
+
+    <article>
+        <p class="number-reverse">02</p>
+        <h2 class="heading-reverse">Deriefing</h2>
+        <p class="description-reverse">Sending the discussed points of the briefing and making adjustments where needed.</p>
+    </article>
+
+     <article>
+        <p class="number">03</p>
+        <h2 class="heading">Proposal</h2>
+        <p class="description">Sending a proposal outlining the work and terms.</p>
+    </article>
+
+    <article>
+        <p class="number-reverse">04</p>
+        <h2 class="heading-reverse">Development</h2>
+        <p class="description-reverse">Developing the website within a framework. This phase also includes testing for responsiveness, accessibility, functionality, performance, and compatibility across devices and browsers.</p>
+    </article>
+
+    <article>
+        <p class="number">05</p>
+        <h2 class="heading">Feedback</h2>
+        <p class="description">Feedback round for final adjustments before launch.</p>
+    </article>
+
+    <article>
+        <p class="number-reverse">06</p>
+        <h2 class="heading-reverse">Testing</h2>
+        <p class="description-reverse">Final testing phase to ensure full functionality, responsiveness, and proper performance across devices and browsers before launch.</p>
+    </article>
+
+     <article>
+        <p class="number">07</p>
+        <h2 class="heading">Live launch</h2>
+        <p class="description">Going live with the website, including handover of access and documentation.</p>
+    </article>
+
 </section>
 
 
@@ -26,7 +63,7 @@
     article {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: .5fr 1fr;
         column-gap: 1em;
         margin-top: 2em;
         padding: 2em;
@@ -40,11 +77,12 @@
         grid-row: 1 / 3;
     }
 
-    h2 {
+    .heading {
         font-family: var(--font-anastasia-italic);
         font-size: var(--font-size-m);
         color: var(--secundary-bordeaux);
         text-align: right;
+        font-weight: 400;
     }
 
     .description {
@@ -54,4 +92,32 @@
         font-size: var(--font-size-base);
         color: var(--secundary-bordeaux);
     }
+
+    .number-reverse {
+        font-family: var(--font-anastasia-italic);
+        font-size: 6.5em;
+        color: var(--secundary-bordeaux);
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        text-align: right;
+    }
+
+    .heading-reverse {
+        font-family: var(--font-anastasia-italic);
+        font-size: var(--font-size-m);
+        color: var(--secundary-bordeaux);
+        text-align: left;
+        font-weight: 400;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .description-reverse {
+        grid-column: 1 / 2;
+        text-align: left;
+        font-family: var(--font-inter-regular);
+        font-size: var(--font-size-base);
+        color: var(--secundary-bordeaux);
+    }
+
 </style>
