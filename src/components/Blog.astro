@@ -1,0 +1,108 @@
+<section class="blogs">
+    <article class="blog-header">
+        <h2>Our blogs</h2>
+        <a class="button-see-all"href="/blog">see all</a>
+    </article>
+
+    <div class="blog-list">
+        <article>
+            <img src="/images/blog-photo-1.png" alt="Laptop and planner with a cup of limonade on a coaster">
+            <p class="date">5 march 2026</p>
+            <h3 id="To-the-woman-who-thinks-tech-isn’t-for-her">To the woman who thinks tech isn’t for her</h3>
+            <p class="description">Why the future of tech needs more women builders.</p>
+            <a aria-labelledby="To-the-woman-who-thinks-tech-isn’t-for-her" href="/blog">read more</a>
+        </article>
+
+        <article>
+            <img src="/images/code.png" alt="Laptop with code on the screen in a dark room">
+            <p class="date">5 march 2026</p>
+            <h3 id="Coding-consistency-and-her-Breaking-barriers-in-tech">Coding, consistency, and her: Breaking barriers in tech</h3>
+            <p class="description">Working title</p>
+            <a aria-labelledby="Coding-consistency-and-her-Breaking-barriers-in-tech" href="/blog">read more</a>
+        </article>
+        
+    </div>
+</section>
+
+<style>
+    .blogs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5em;
+        @media (min-width: 768px) {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr;
+            padding-left: 2em;
+        }
+    }
+
+    .blog-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1em;
+    }
+
+    h2 {
+
+        font-size: var(--font-size-l);
+        font-family: var( --font-inter-regular);
+        font-weight: 400;
+        color: var(--primary-bordeaux);
+        text-transform: uppercase;
+        margin: 1em 0 .5em 0;
+        text-align: center;
+    }
+
+    .blog-list {
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: end;
+            gap: 2em;
+        }
+    }
+
+    article {
+        max-width: 20em;
+        padding: .3em;
+        display: flex;
+        flex-direction: column;
+        row-gap: .75em;
+        margin-top: 2.5em;
+    }
+
+    h3 {
+        font-family: var(--font-inter-regular);
+        font-weight: 400;
+        font-size: var(--font-size-m);
+        color: var(--primary-bordeaux);
+        flex-grow: 1;
+    }
+
+    p {
+        font-size: var(--font-size-base);
+        font-family: var(--font-inter-regular);
+    }
+
+    .description {
+        font-family: var(--font-inter-regular);
+    }
+
+    a {
+        text-decoration: none;
+        border: var(--primary-bordeaux) solid 2px;
+        border-radius: var(--border-radius);
+        padding: .75em 1em .75em 1em;
+        width: 10em;
+        font-family: var(--font-inter-regular);
+        color: var(--primary-bordeaux);
+        font-size: var(--font-size-base);
+        text-align: center;
+         &:hover {
+            background-color: var(--primary-bordeaux);
+            color: white;
+            cursor: pointer;}
+    }
+
+</style>
