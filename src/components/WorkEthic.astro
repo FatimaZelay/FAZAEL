@@ -4,18 +4,24 @@
         <p class="number">01</p>
         <h2 class="heading">First meeting</h2>
         <p class="description">Understanding your vision, wishes and branding.</p>
+        <video class="video" muted loop>
+            <source src="/images/0420.mp4" type="video/mp4" />
+        </video>
     </article>
 
     <article>
         <p class="number-reverse">02</p>
-        <h2 class="heading-reverse">Deriefing</h2>
-        <p class="description-reverse">Sending the discussed points of the briefing and making adjustments where needed.</p>
+        <h2 class="heading-reverse">Deriefing and Proposal</h2>
+        <p class="description-reverse">Sending the discussed points of the briefing and making adjustments where needed. After that we send a proposal outlining the work and terms.</p>
     </article>
 
      <article>
         <p class="number">03</p>
-        <h2 class="heading">Proposal</h2>
-        <p class="description">Sending a proposal outlining the work and terms.</p>
+        <h2 class="heading">Design</h2>
+        <p class="description">Creating a bespoke design with attention to detail and user experience.</p>
+        <video class="video" muted loop>
+            <source src="/images/0426.mp4" type="video/mp4" />
+        </video>
     </article>
 
     <article>
@@ -46,17 +52,20 @@
 
 
 <style>
+    section {
+        padding: 4em;
+    }
 
     h1 {
         font-family: var(--font-inter-regular);
-        font-size: var(--font-size-l);
+        font-size: clamp(var(--font-size-l), 5vw, var(--font-size-xl));
         color: var(--secundary-bordeaux);
         text-transform: uppercase;
         font-weight: 400;
         text-align: center;
         margin-top: 1em;
         @media (min-width: 768px) {
-            margin-top: 7em;
+            margin-top: 5em;
         }
     }
 
@@ -65,21 +74,28 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: .5fr 1fr;
         column-gap: 1em;
-        margin-top: 2em;
-        padding: 2em;
+        padding: 3em 3em 0 3em;
+        height: 20em;
+        border-bottom: 0.5px solid rgba(123, 0, 45, 0.3);
+        position: relative;
+        overflow: hidden;
+        &:hover .video {
+            bottom: 0;
+        }    
     }
 
     .number {
         font-family: var(--font-anastasia-italic);
-        font-size: 6.5em;
+        font-size: 8em;
         color: var(--secundary-bordeaux);
         grid-column: 1 / 2;
         grid-row: 1 / 3;
+        padding-top: .3em;
     }
 
     .heading {
         font-family: var(--font-anastasia-italic);
-        font-size: var(--font-size-m);
+        font-size: clamp(var(--font-size-m), 5vw, var(--font-size-xxl));
         color: var(--secundary-bordeaux);
         text-align: right;
         font-weight: 400;
@@ -89,8 +105,19 @@
         grid-column: 2 / 3;
         text-align: right;
         font-family: var(--font-inter-regular);
-        font-size: var(--font-size-base);
+        font-size: clamp(var(--font-size-base), 3vw, var(--font-size-xs));
         color: var(--secundary-bordeaux);
+    }
+
+    .video {
+        position: absolute;
+        bottom: 100%;
+        left: 1em;
+        width: 16em;
+        height: 22em;
+        object-fit: cover;
+        transition: bottom 0.6s ease;
+        z-index: 1;
     }
 
     .number-reverse {
@@ -104,7 +131,7 @@
 
     .heading-reverse {
         font-family: var(--font-anastasia-italic);
-        font-size: var(--font-size-m);
+        font-size: clamp(var(--font-size-m), 5vw, var(--font-size-xxl));
         color: var(--secundary-bordeaux);
         text-align: left;
         font-weight: 400;
@@ -116,8 +143,7 @@
         grid-column: 1 / 2;
         text-align: left;
         font-family: var(--font-inter-regular);
-        font-size: var(--font-size-base);
+        font-size: clamp(var(--font-size-base), 3vw, var(--font-size-xs));
         color: var(--secundary-bordeaux);
     }
-
 </style>
