@@ -83,7 +83,7 @@ articles.forEach(article => {
 
 <style>
     section {
-        padding: 2em;
+        padding: 1em;
         @media (min-width: 768px) {
             padding: 4em;
         }
@@ -109,7 +109,6 @@ articles.forEach(article => {
         column-gap: 1em;
         height: 20em;
         padding: 3em 1em 0 1em;
-        margin: -2em;
         border-bottom: 0.5px solid rgba(123, 0, 45, 0.3);
         position: relative;
         overflow: hidden;
@@ -117,7 +116,6 @@ articles.forEach(article => {
             bottom: 0;
         }
         @media (min-width: 768px) {
-            margin: 0;
             grid-template-rows: .5fr 1fr;
             padding: 3em 3em 0 3em;
 
@@ -139,6 +137,8 @@ articles.forEach(article => {
         color: var(--secundary-bordeaux);
         text-align: right;
         font-weight: 400;
+        grid-row: 1 / 2;
+        padding-top: 2em;
         @media (min-width: 768px) {
             padding-top: 1em;
         }
@@ -155,16 +155,22 @@ articles.forEach(article => {
     .video {
         position: absolute;
         bottom: 100%;
-        left: 1em;
-        width: 12em;
-        height: 18em;
+        width: 10em;
+        height: 20em;
         object-fit: cover;
         transition: bottom 0.6s ease;
         z-index: 1;
+        @media (min-width: 375px) {
+            width: 12em;
+            height: 20em;
+        }
         @media (min-width: 768px) {
             width: 16em;
             height: 22em;
+            left: 1em;
         }
+
+        
     }
 
     .number-reverse {
