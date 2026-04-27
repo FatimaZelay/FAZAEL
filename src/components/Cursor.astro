@@ -29,3 +29,21 @@
     }
   </style>
   
+  <script>
+    const cursor = document.querySelector(".cursor") as HTMLElement;
+  
+    window.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+  
+    const interactiveElements = document.querySelectorAll("a, button");
+    interactiveElements.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1.2)";
+      });
+      el.addEventListener("mouseleave", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+      });
+    });
+  </script>
