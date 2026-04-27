@@ -1,0 +1,236 @@
+<script>
+    const articles = document.querySelectorAll('article');
+
+articles.forEach(article => {
+    const video = article.querySelector('video');
+    if (!video) return;
+
+    article.addEventListener('mouseenter', () => {
+        video.play();
+    });
+
+    article.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0; // reset video to 0
+    });
+
+
+    // click event for mobile devices
+    article.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+        video.currentTime = 0;
+    }
+});
+});
+
+</script>
+
+<section>
+    <h1>Work Ethic</h1>
+    <p class="ethic-description">From vision to launch: how we build your digital presence.</p>
+    <article>
+        <p class="number">01</p>
+        <h2 class="heading">First meeting</h2>
+        <p class="description">Understanding your vision, wishes and branding.</p>
+        <video class="video" muted loop>
+            <source src="/images/0427.mp4" type="video/mp4" />
+        </video>
+    </article>
+
+    <article>
+        <p class="number-reverse">02</p>
+        <h2 class="heading-reverse">Deriefing and Proposal</h2>
+        <p class="description-reverse">Sending the discussed points of the briefing and making adjustments where needed. After that we send a proposal outlining the work and terms.</p>
+    </article>
+
+     <article>
+        <p class="number">03</p>
+        <h2 class="heading">Design</h2>
+        <p class="description">Creating a bespoke design with attention to detail and user experience.</p>
+        <video class="video" muted loop>
+            <source src="/images/0426.mp4" type="video/mp4" />
+        </video>
+    </article>
+
+    <article>
+        <p class="number-reverse">04</p>
+        <h2 class="heading-reverse">Development</h2>
+        <p class="description-reverse">Developing the website within a framework including testing for responsiveness, accessibility, functionality, and compatibility across devices and browsers.</p>
+        <video class="video-reverse" muted loop>
+            <source src="/images/0428.mp4" type="video/mp4" />
+        </video>
+    </article>
+
+    <article>
+        <p class="number">05</p>
+        <h2 class="heading">Feedback</h2>
+        <p class="description">Feedback round for final adjustments before launch.</p>
+    </article>
+
+    <article>
+        <p class="number-reverse">06</p>
+        <h2 class="heading-reverse">Testing</h2>
+        <p class="description-reverse">Final testing phase to ensure full functionality, responsiveness, and proper performance across devices and browsers before launch.</p>
+    </article>
+
+     <article>
+        <p class="number">07</p>
+        <h2 class="heading">Live launch</h2>
+        <p class="description">Going live with the website, including handover of access and documentation.</p>
+    </article>
+
+</section>
+
+
+<style>
+    section {
+        padding: 1em;
+        @media (min-width: 768px) {
+            padding: 4em;
+        }
+    }
+
+    h1 {
+        font-family: var(--font-inter-regular);
+        font-size: clamp(var(--font-size-l), 5vw, var(--font-size-xl));
+        color: var(--secundary-bordeaux);
+        text-transform: uppercase;
+        font-weight: 400;
+        text-align: center;
+        margin: 1em 0 .5em 0;
+        @media (min-width: 768px) {
+            margin: 5em 0 .3em 0;
+        }
+    }
+
+    .ethic-description {
+        font-family: var(--font-inter-regular);
+        font-size: clamp(var(--font-size-base), 3vw, var(--font-size-xs));
+        color: var(--secundary-bordeaux);;
+        text-align: center;
+        margin-bottom: 3em;
+        @media (min-width: 768px) {
+            margin-bottom: 4em;
+        }
+    }
+    article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0fr 1fr;
+        column-gap: 1em;
+        height: 20em;
+        padding: 3em 1em 0 1em;
+        border-bottom: 0.5px solid rgba(123, 0, 45, 0.3);
+        position: relative;
+        overflow: hidden;
+        &:hover .video,
+        &:hover .video-reverse {
+         bottom: 0;
+        }
+        @media (min-width: 768px) {
+            grid-template-rows: .5fr 1fr;
+            padding: 3em 3em 0 3em;
+
+        }
+    }
+
+    .number {
+        font-family: var(--font-anastasia-italic);
+        font-size: 8em;
+        color: var(--secundary-bordeaux);
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        padding-top: .3em;
+    }
+
+    .heading {
+        font-family: var(--font-anastasia-italic);
+        font-size: clamp(var(--font-size-m), 5vw, var(--font-size-xxl));
+        color: var(--secundary-bordeaux);
+        text-align: right;
+        font-weight: 400;
+        grid-row: 1 / 2;
+        padding-top: 2em;
+        @media (min-width: 768px) {
+            padding-top: 1em;
+        }
+    }
+
+    .description {
+        grid-column: 2 / 3;
+        text-align: right;
+        font-family: var(--font-inter-regular);
+        font-size: clamp(var(--font-size-base), 3vw, var(--font-size-xs));
+        color: var(--secundary-bordeaux);
+    }
+
+    .video {
+        position: absolute;
+        bottom: 100%;
+        width: 10em;
+        height: 20em;
+        object-fit: cover;
+        transition: bottom 0.6s ease;
+        z-index: 1;
+        left: .5em;
+        @media (min-width: 375px) {
+            width: 12em;
+            height: 20em;
+        }
+        @media (min-width: 768px) {
+            right: 1em;
+        }
+    }
+
+    .video-reverse {
+        position: absolute;
+        bottom: 100%;
+        width: 10em;
+        height: 20em;
+        object-fit: cover;
+        transition: bottom 0.6s ease;
+        z-index: 1;
+        right: .5em;
+        @media (min-width: 375px) {
+            width: 12em;
+            height: 20em;
+        }
+        @media (min-width: 768px) {
+            right: 1em;
+        }
+    }
+
+    .number-reverse {
+        font-family: var(--font-anastasia-italic);
+        font-size: 8em;
+        color: var(--secundary-bordeaux);
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        text-align: right;
+        padding-top: .3em;
+    }
+
+    .heading-reverse {
+        font-family: var(--font-anastasia-italic);
+        font-size: clamp(var(--font-size-m), 5vw, var(--font-size-xxl));
+        color: var(--secundary-bordeaux);
+        text-align: left;
+        font-weight: 400;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        @media (min-width: 768px) {
+            padding-top: 1em;
+        }
+    }
+
+    .description-reverse {
+        grid-column: 1 / 2;
+        text-align: left;
+        font-family: var(--font-inter-regular);
+        font-size: clamp(var(--font-size-base), 3vw, var(--font-size-xs));
+        color: var(--secundary-bordeaux);
+    }
+</style>
