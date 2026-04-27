@@ -13,7 +13,19 @@ articles.forEach(article => {
         video.pause();
         video.currentTime = 0; // reset video to 0
     });
+
+
+    // click event for mobile devices
+    article.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+        video.currentTime = 0;
+    }
 });
+});
+
 </script>
 
 <section>
@@ -45,7 +57,7 @@ articles.forEach(article => {
     <article>
         <p class="number-reverse">04</p>
         <h2 class="heading-reverse">Development</h2>
-        <p class="description-reverse">Developing the website within a framework. This phase also includes testing for responsiveness, accessibility, functionality, performance, and compatibility across devices and browsers.</p>
+        <p class="description-reverse">Developing the website within a framework including testing for responsiveness, accessibility, functionality, and compatibility across devices and browsers.</p>
     </article>
 
     <article>
@@ -71,7 +83,10 @@ articles.forEach(article => {
 
 <style>
     section {
-        padding: 4em;
+        padding: 2em;
+        @media (min-width: 768px) {
+            padding: 4em;
+        }
     }
 
     h1 {
@@ -90,16 +105,23 @@ articles.forEach(article => {
     article {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: .5fr 1fr;
+        grid-template-rows: 0fr 1fr;
         column-gap: 1em;
-        padding: 3em 3em 0 3em;
         height: 20em;
+        padding: 3em 1em 0 1em;
+        margin: -2em;
         border-bottom: 0.5px solid rgba(123, 0, 45, 0.3);
         position: relative;
         overflow: hidden;
         &:hover .video {
             bottom: 0;
-        }    
+        }
+        @media (min-width: 768px) {
+            margin: 0;
+            grid-template-rows: .5fr 1fr;
+            padding: 3em 3em 0 3em;
+
+        }
     }
 
     .number {
@@ -117,6 +139,9 @@ articles.forEach(article => {
         color: var(--secundary-bordeaux);
         text-align: right;
         font-weight: 400;
+        @media (min-width: 768px) {
+            padding-top: 1em;
+        }
     }
 
     .description {
@@ -131,11 +156,15 @@ articles.forEach(article => {
         position: absolute;
         bottom: 100%;
         left: 1em;
-        width: 16em;
-        height: 22em;
+        width: 12em;
+        height: 18em;
         object-fit: cover;
         transition: bottom 0.6s ease;
         z-index: 1;
+        @media (min-width: 768px) {
+            width: 16em;
+            height: 22em;
+        }
     }
 
     .number-reverse {
@@ -156,6 +185,9 @@ articles.forEach(article => {
         font-weight: 400;
         grid-column: 1/2;
         grid-row: 1/2;
+        @media (min-width: 768px) {
+            padding-top: 1em;
+        }
     }
 
     .description-reverse {
