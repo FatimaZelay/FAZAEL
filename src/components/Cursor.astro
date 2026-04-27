@@ -4,3 +4,28 @@
       <path d="M21.9077 10C16.9077 11.5 12.4077 20 11.9077 20C11.4077 20 -5.59229 10 1.90772 10C9.40772 10 6.38487 0 11.9077 0C17.4306 0 26.9077 8.5 21.9077 10Z" fill="#520405"/>
     </svg>
   </div>
+  
+  <style>
+    body {
+      cursor: none;
+    }
+  
+    .cursor {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 30px;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: transform 0.12s ease;
+    }
+  
+    .cursor svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  
