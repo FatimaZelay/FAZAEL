@@ -5,30 +5,25 @@
 
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
-    const split = new SplitText(".mission", { type: "words, chars" });
+    const splitMission = new SplitText(".mission", { type: "words" });
 
-    gsap.fromTo(split.chars,{
+    gsap.from(splitMission.words,{
         opacity: 0.2,
-    },
-    {
-        opacity: 1,
-        stagger: 0.05,
+        stagger: {each: 0.4},
         scrollTrigger: {
         trigger: ".mission",
-        start: "top 50%",
+        start: "top 60%",
         end: "top 5%",
         scrub: true,
         },
     }
     );
 
-    const splitContact = new SplitText(".contact-text", { type: "words, chars" });
-    gsap.fromTo(splitContact.chars,{
+    const splitContact = new SplitText(".contact-text", { type: "words" });
+
+    gsap.from(splitContact.words,{
         opacity: 0.2,
-    },
-    {
-        opacity: 1,
-        stagger: 0.05,
+        stagger: {each: 0.4},
         scrollTrigger: {
         trigger: ".contact-text",
         start: "top 50%",
@@ -40,7 +35,7 @@
 </script>
 
 <section>
-    <p class="mission">We believe that building an online presence shouldn’t feel overwhelming or out of reach. Instead, it should be an empowering step in growing a business.</p>
+    <p class="mission">We believe that building an vision shouldn’t feel overwhelming or out of reach. Instead, it should be an empowering step in growing a business.</p>
     <p class="contact-text">That’s why we create websites that support every woman with a vision in building a strong online presence. Let’s turn your vision into reality. Connect with us through the contact form.</p>
 </section>
 <style>
