@@ -1,0 +1,71 @@
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    import SplitText from "gsap/SplitText";
+
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
+    const split = new SplitText(".mission", { type: "words, chars" });
+
+    gsap.fromTo(split.chars,{
+        opacity: 0.2,
+    },
+    {
+        opacity: 1,
+        stagger: 0.05,
+        scrollTrigger: {
+        trigger: ".mission",
+        start: "top 80%",
+        end: "top 30%",
+        scrub: true,
+        },
+    }
+    );
+
+    const splitContact = new SplitText(".contact-text", { type: "words, chars" });
+    gsap.fromTo(splitContact.chars,{
+        opacity: 0.2,
+    },
+    {
+        opacity: 1,
+        stagger: 0.05,
+        scrollTrigger: {
+        trigger: ".contact-text",
+        start: "top 80%",
+        end: "top 30%",
+        scrub: true,
+        },
+    }
+    );
+</script>
+
+<section>
+    <p class="mission">We believe that building an online presence shouldn’t feel overwhelming or out of reach. Instead, it should be an empowering step in growing a business.</p>
+    <p class="contact-text">That’s why we create websites that support every woman with a vision in building a strong online presence, Let’s turn your vision into reality. Connect with us through the contact form.</p>
+</section>
+<style>
+    p {
+        line-height: 1.5;
+        font-weight: 400;
+        font-family: var(--font-inter-regular);
+        font-size: clamp(var(--font-size-m), 2vw, var(--font-size-xl));
+        color: var(--primary-bordeaux);
+        @media (min-width: 768px) {
+            max-width: 25.5em;
+        }
+    }
+
+    .mission {
+        padding: 4em 2em 3em 2em;
+        @media (min-width: 768px) {
+            padding: 4em 0 3em 3em;
+        }
+    }
+
+    .contact-text {
+        padding: 0 2em 4em 2em;
+        @media (min-width: 768px) {
+            padding: 0 0 3em 3em;
+        }
+    }
+</style>
