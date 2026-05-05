@@ -1,4 +1,3 @@
-<main class="main">
 ---
 // @ts-nocheck
 import Sidebar from "../components/Sidebar.astro";
@@ -90,6 +89,22 @@ const sections = [
         margin: 0 auto;
         padding: 14rem 1.25rem;
     }
+<script>
+  const links = document.querySelectorAll('.sidebar-item');
+  const navbar = document.querySelector('nav') || document.querySelector('header');
+  const navbarHeight = navbar ? navbar.offsetHeight : 0;
+  let isScrolling = false;
+
+  function setActive(id = '') {
+    links.forEach((link) => {
+      if (!(link instanceof HTMLElement)) return;
+      link.classList.remove('active');
+      const linkId = (link.getAttribute('href') || '').replace('#', '');
+      if (linkId === id) {
+        link.classList.add('active');
+      }
+    });
+  }
 
     .section-title {
         font-family:
