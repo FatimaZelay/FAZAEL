@@ -135,6 +135,37 @@ const sections = [
         font-size: clamp(var(--font-size-s), 6vw, var(--font-size-m));
         text-transform: uppercase
     }
+  window.addEventListener('scroll', () => {
+    if (isScrolling) return;
+    const id = getActiveSection();
+    if (id) setActive(id);
+  }, { passive: true });
+
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = (link.getAttribute('href') || '').replace('#', '');
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      isScrolling = true;
+      setActive(id);
+
+      const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
+
+      if ('onscrollend' in window) {
+        window.addEventListener('scrollend', () => {
+          isScrolling = false;
+        }, { once: true });
+      } else {
+        setTimeout(() => {
+          isScrolling = false;
+        }, 800);
+      }
+    });
+  });
+</script>
 
     .contact-text a {
         color: var(--primary-bordeaux);
