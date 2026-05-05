@@ -80,15 +80,6 @@ const sections = [
   </main>
 </div>
 
-<style>
-    .main {
-        display: flex;
-        flex-direction: column;
-        gap: clamp(2.5rem, 5vw, 3.75rem);
-        max-width: 37.5rem;
-        margin: 0 auto;
-        padding: 14rem 1.25rem;
-    }
 <script>
   const links = document.querySelectorAll('.sidebar-item');
   const navbar = document.querySelector('nav') || document.querySelector('header');
@@ -106,14 +97,6 @@ const sections = [
     });
   }
 
-    .section-title {
-        font-family:
-            var(--font-anastasia-italic), var(--font-anastasia-regular);
-        color: var(--primary-bordeaux);
-        font-weight: normal;
-        font-size: clamp(var(--font-size-base), 3vw, var(--font-size-l));
-        margin-bottom: clamp(1rem, 2vw, 1.5rem);
-    }
   function getActiveSection() {
     const sections = [...document.querySelectorAll('.section')];
     let active = sections[0];
@@ -127,14 +110,6 @@ const sections = [
     return active ? active.id : null;
   }
 
-    .page-title {
-        font-family: var(--font-anastasia-regular);
-        color: var(--primary-bordeaux);
-        text-align: center;
-        font-weight: normal;
-        font-size: clamp(var(--font-size-s), 6vw, var(--font-size-m));
-        text-transform: uppercase
-    }
   window.addEventListener('scroll', () => {
     if (isScrolling) return;
     const id = getActiveSection();
@@ -167,20 +142,67 @@ const sections = [
   });
 </script>
 
-    .contact-text a {
-        color: var(--primary-bordeaux);
-        text-decoration: none;
-        font-weight: 900;
-    }
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
 
-    .contact-text a:hover {
-        text-decoration: underline;
-        opacity: 0.8;
-        
+  .content-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 30px;
+    width: 100%;
+    align-items: flex-start;
+    padding: 100px 16px 40px 8px;
+
+    @media (min-width: 768px) {
+      gap: 60px;
+      padding: 250px 60px 40px 60px;
     }
-    a:focus-visible {
-        outline: 2px solid var(--primary-bordeaux);
-        outline-offset: 4px;
-        border-radius: 2px;
+  }
+
+  .page-title {
+    font-family: var(--font-anastasia-regular);
+    color: var(--primary-bordeaux);
+    font-weight: normal;
+    font-size: clamp(var(--font-size-s), 6vw, var(--font-size-m));
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 0;
+
+    @media (min-width: 768px) {
+      margin-left: -200px;
     }
+  }
+
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 3.75rem);
+  }
+
+  .section {
+    scroll-margin-top: 100px;
+  }
+
+  .section-title {
+    font-family: var(--font-anastasia-italic);
+    color: var(--primary-bordeaux);
+    font-weight: normal;
+    font-size: clamp(var(--font-size-base), 3vw, var(--font-size-l));
+    margin-bottom: 1rem;
+    padding: 0 1.5rem;
+  }
+
+  .body-text {
+    line-height: 1.7;
+  }
+
+  .contact-text a {
+    color: var(--primary-bordeaux);
+    text-decoration: none;
+    font-weight: 900;
+  }
 </style>
