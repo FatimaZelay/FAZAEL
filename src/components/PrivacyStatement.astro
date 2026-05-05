@@ -1,4 +1,18 @@
 <main class="main">
+---
+// @ts-nocheck
+import Sidebar from "../components/Sidebar.astro";
+
+const sections = [
+  { label: "1. Introduction", id: "introduction" },
+  { label: "2. Data we collect", id: "data" },
+  { label: "3. How we use it", id: "usage" },
+  { label: "4. Cookies", id: "cookies" },
+  { label: "5. Third parties", id: "thirdparties" },
+  { label: "6. Retention", id: "retention" },
+  { label: "7. Your rights", id: "rights" },
+  { label: "8. Contact", id: "contact" }
+];
     <h1 class="page-title">Privacy Statement</h1>
 
     <section class="section" id="introduction">
