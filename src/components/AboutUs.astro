@@ -104,3 +104,42 @@
         reality"
     </p>
 </div>
+
+<script>
+    const thumbs = document.querySelectorAll<HTMLElement>(".thumb");
+
+    thumbs.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+            const name = thumb.dataset.person;
+            if (!name) return;
+
+            thumbs.forEach((t) => t.classList.remove("active"));
+            thumb.classList.add("active");
+
+            document
+                .querySelectorAll<HTMLElement>(".featured")
+                .forEach((img) => {
+                    if (img.id === `img-${name}`) {
+                        img.style.opacity = "0";
+                        img.classList.add("visible");
+                        requestAnimationFrame(() => {
+                            img.style.transition = "opacity 0.45s ease";
+                            img.style.opacity = "1";
+                        });
+                    } else {
+                        img.style.opacity = "0";
+                        setTimeout(() => img.classList.remove("visible"), 440);
+                    }
+                });
+
+            document
+                .querySelectorAll<HTMLElement>(".person-panel")
+                .forEach((panel) => {
+                    panel.classList.toggle(
+                        "active",
+                        panel.id === `bio-${name}`,
+                    );
+                });
+        });
+    });
+</script>
