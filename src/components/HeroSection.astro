@@ -61,10 +61,13 @@
         }
     }
 
+
+    /* if JS is off, the CSS fallback starts here */
+    :global(.hero h1 em) {
+        font-family: var(--font-anastasia-regular);
         font-weight: 400;
-        font-family: var(--font-inter-regular);
-        color: var(--primary-bordeaux);
-        max-width: 20em;
+        color: var(--neutral-browngreen);
+        animation: fadeUp 1.5s cubic-bezier(0.22, 0.68, 0, 1.1) 0.8s both;
     }
 
     .script {
