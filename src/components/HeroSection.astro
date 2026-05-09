@@ -70,5 +70,17 @@
         animation: fadeUp 1.5s cubic-bezier(0.22, 0.68, 0, 1.1) 0.8s both;
     }
 
+
+    /* the keyframe animation is defined, used by both the CSS fallback and JS */
+
+    :global(@keyframes fadeUp) {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 </style>
