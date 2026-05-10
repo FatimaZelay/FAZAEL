@@ -5,20 +5,25 @@
 
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
-    const split = new SplitText(".intro", { type: "words" });
+    let mm = gsap.matchMedia();
 
-    gsap.from(split.words,{
-        opacity: 0.2,
-        duration: 0.2,
-        stagger: {each: 0.4},
-        scrollTrigger: {
-            trigger: ".intro",
-            start: "top 60%",
-            end: "top 5%",
-            scrub: true,
-        },
-    }
-    );
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+
+        const split = new SplitText(".intro", { type: "words" });
+
+        gsap.from(split.words,{
+            opacity: 0.2,
+            duration: 0.2,
+            stagger: {each: 0.4},
+            scrollTrigger: {
+                trigger: ".intro",
+                start: "top 60%",
+                end: "top 5%",
+                scrub: true,
+            },
+        }
+        );
+    });
 </script>
 
 <section>
