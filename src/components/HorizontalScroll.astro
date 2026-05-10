@@ -5,13 +5,17 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const wrapper = document.querySelector('.wrapper');
-    let scrollWidth = wrapper.offsetWidth;
-    let amountToScroll = scrollWidth - window.innerWidth;
     let mm = gsap.matchMedia();
 
+    function getScrollAmount () {
+        let scrollWidth = wrapper.scrollWidth;
+        let amountToScroll = scrollWidth - window.innerWidth;
+        return -(scrollWidth - window.innerWidth);
+    }
+   
     mm.add("(prefers-reduced-motion: no-preference)", () => {
         const tween =  gsap.to(wrapper, {
-            x: -amountToScroll,
+            x: getScrollAmount,
             duration: 3,
             ease: 'none',
             }
@@ -20,9 +24,10 @@
         ScrollTrigger.create({
             trigger: wrapper,
             start: "top 20%",
-            end: "+=" + amountToScroll,
+            end: () => `+${getScrollAmount() * -2} top`,
             pin: true,
             animation: tween,
+            invalidateOnRefresh: true,
             scrub: 1,
         });
             
@@ -59,9 +64,11 @@
     }
 
     h2 {
-        font-size: 15em;
+        font-size: 10em;
         font-family: var(--font-inter-bold);
         color: var(--primary-bordeaux);
-
+        @media (min-width: 768px) {
+            font-size: 15em;
+        }
     }
 </style>
