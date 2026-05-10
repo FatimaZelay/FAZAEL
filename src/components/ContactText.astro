@@ -5,33 +5,38 @@
 
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
-    const splitMission = new SplitText(".mission", { type: "words" });
+    let mm = gsap.matchMedia();
 
-    gsap.from(splitMission.words,{
-        opacity: 0.2,
-        stagger: {each: 0.4},
-        scrollTrigger: {
-            trigger: ".mission",
-            start: "top 60%",
-            end: "top 5%",
-            scrub: true,
-        },
-    }
-    );
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const splitMission = new SplitText(".mission", { type: "words" });
 
-    const splitContact = new SplitText(".contact-text", { type: "words" });
+        gsap.from(splitMission.words,{
+            opacity: 0.2,
+            stagger: {each: 0.4},
+            scrollTrigger: {
+                trigger: ".mission",
+                start: "top 60%",
+                end: "top 5%",
+                scrub: true,
+            },
+        }
+        );
 
-    gsap.from(splitContact.words,{
-        opacity: 0.2,
-        stagger: {each: 0.4},
-        scrollTrigger: {
-            trigger: ".contact-text",
-            start: "top 40%",
-            end: "top 5%",
-            scrub: true,
-        },
-    }
-    );
+        const splitContact = new SplitText(".contact-text", { type: "words" });
+
+        gsap.from(splitContact.words,{
+            opacity: 0.2,
+            stagger: {each: 0.4},
+            scrollTrigger: {
+                trigger: ".contact-text",
+                start: "top 40%",
+                end: "top 5%",
+                scrub: true,
+            },
+        }
+        );
+        });
+    
 </script>
 
 <section>
