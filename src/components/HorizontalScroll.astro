@@ -34,20 +34,20 @@
     });    
 </script>
 
-<div class="wrapper">
-    <section class="scroll-section">
-        <h2 class="fazael">Fazael.</h2>
-        <h2>A</h2>
-        <h2>digital</h2>
-        <h2>agency</h2>
-        <h2>based</h2>
-        <h2>in</h2>
-        <h2>Amsterdam.</h2>
+<div class="scroll-container">
+    <section class="wrapper">
+        <article class="scroll-section">
+                <h2 class="fazael">FAZAEL. A digital agency based in Amsterdam.</h2>
+        </article>
     </section>
 </div>
 
-
 <style>
+    .scroll-container {
+        overflow: hidden;
+        width: 100vw;
+    }
+
     .wrapper {
         display: flex;
         width: max-content;
@@ -55,12 +55,11 @@
 
     .scroll-section {
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;  
         gap: 8em;
         padding: 4em 2em;
-    }
-
-    .fazael {
-        text-transform: uppercase;
+        white-space: nowrap;
     }
 
     h2 {
