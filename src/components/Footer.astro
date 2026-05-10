@@ -1,88 +1,175 @@
+<picture>
+    <img class="embossed" src="/images/embossed.png" alt="Fazael initials (FZ) withembossed effect">
+</picture>
+
 <footer>
-    <ul class="footer-nav">
-        <li>
-            <a href="#">our work</a>
-        </li>
-        
-        <li>
-            <a href="#">contact</a>
-        </li>
-        
-        <li>
-            <a href="/workethic">work ethic</a>
-        </li>
-        
-        <li>
-            <a href="#">terms & conditions</a>
-        </li>
-        <li>
-            <a href="/privacy">privacy statement</a>
-        </li>
-    </ul>
+  <section class="wrapper">
+        <nav class="navigation-footer">
+            <ul class="insights">
+                <li>
+                    <h2>insights</h2>
+                </li>
+                
+                <li>
+                    <a href="/contact">work ethic</a>
+                </li>
+                
+                <li>
+                    <a href="/workethic">our work</a>
+                </li>
+                
+                <li>
+                    <a href="/terms-and-conditions">blog</a>
+                </li>
+            </ul>
 
-    <ul class="contact-info">
-        <li>
-            copyright © 2026 Fazael
-        </li>
+            <ul class="connect">
+                <li>
+                    <h2>let's connect</h2>
+                </li>
+                
+                <li>
+                    <a href="/aboutus">about us</a>
+                </li>
+                
+                <li>
+                    <a href="/contact">contact</a>
+                </li>
+            </ul>
 
-        <li>
-            <a href="mailto:fazael.contact@gmail.com">fazael.contact@gmail.com</a>
-        </li>
+            <ul class="legal">
+                <li>
+                    <h2>legal</h2>
+                </li>
 
-        <li>
-            <a href="#top">back to top</a>
-        </li>
-    </ul>
+                <li>
+                    <a href="/contact">privacy statement</a>
+                </li>
+                
+                <li>
+                    <a href="/terms-and-conditions">terms & conditions</a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="contact-info">
+            <ul class="list-contact-info">
+                <li>
+                    copyright © 2026 Fazael
+                </li>
+
+                <li>
+                    <a href="mailto:fazael.contact@gmail.com">fazael.contact@gmail.com</a>
+                </li>
+
+                <li>
+                    <a href="#top">back to top ↑</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
 </footer>
 
 <style>
+    .embossed {
+        width: 100%;
+        height: 20em;
+        overflow: hidden;
+        object-fit: cover;
+        margin-top: 2em;
+    }   
+
     footer {
-        background-color: var(--primary-bordeaux);
-        margin-top: 5em;
-        padding: 2em;
-    }
-
-    .footer-nav {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2em;
-        padding-top: 2em;
-        padding-bottom: 2em;
+        justify-content: start;
+        padding: 3em;
+        @media (min-width: 768px) {
+            justify-content: center;
+        }
+        
     }
 
-    .footer-nav li {
-        font-size: var(--font-size-s);
-        &:hover{
-            cursor: pointer;
-            transform: translateX(.5em);
-            transition: transform 0.3s ease;
+    .wrapper {
+        @media (min-width: 768px) {
+            flex-direction: column;
+            align-self: center;
+            gap: 3em;        
         }
     }
+
+    .navigation-footer {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 768px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: baseline;
+            gap: 11em;
+        }
+    }   
 
     li {
         list-style: none;
+        padding-top: 1em;
+        color: var(--primary-bordeaux);
     }
 
-    a, p, li {
+    h2 {
+        padding-top: 1em;
+    }
+
+    a {
         text-decoration: none;
-        font-family: var(--font-inter-regular);
-        color: var(--neutral-white);
-    }
+        color: var(--primary-bordeaux);
+        background-image: linear-gradient(var(--primary-bordeaux), var(--primary-bordeaux));
+        background-size: 0% .1em;
+        background-repeat: no-repeat;
+        background-position: left bottom;
 
-    .contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: .3em;
-        padding: 2em 0;
-        @media (min-width: 768px) {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+        @media (prefers-reduced-motion:no-preference) {
+            transition: background-size 0.3s ease;
+        }
+
+        &:hover {
+            background-size: 100% .1em;
         }
     }
 
-    .contact-info li {
+    a:hover {
+    }
+
+    .insights,
+    .connect,
+    .legal {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
         font-size: var(--font-size-base);
+        font-family: var(--font-inter-regular);
+        color: var(--primary-bordeaux);
+    }
+
+
+
+  .list-contact-info {
+        display: flex;
+        flex-direction: column;
+        padding-top: 4em;
+        padding-bottom: 1em;
+        font-family: var(--font-inter-regular);
+        @media (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            list-style: none;
+            justify-items: baseline;
+            gap: 11em;
+        }
+    }
+
+    a[href="#top"] {
+        translate:0 calc(100% + 1em);
+            @container scroll-state(scrollable:top) {
+                translate:0 0;
+            }
     }
 </style>
