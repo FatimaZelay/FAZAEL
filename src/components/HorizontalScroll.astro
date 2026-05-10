@@ -24,7 +24,7 @@
         ScrollTrigger.create({
             trigger: wrapper,
             start: "top 20%",
-            end: () => `+${getScrollAmount() * -2} top`,
+            end: () => `+=${getScrollAmount() * -1} top`,
             pin: true,
             animation: tween,
             invalidateOnRefresh: true,
