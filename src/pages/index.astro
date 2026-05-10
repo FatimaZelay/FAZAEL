@@ -8,17 +8,24 @@ import Form from '../components/Form.astro';
 import Blog from '../components/Blog.astro';
 import OurWorkSection from '../components/OurWorkSection.astro';
 import Banner from '../components/Banner.astro';
+import IntroText from '../components/IntroText.astro';
+import ContactText from '../components/ContactText.astro';
+import ScrollBar from '../components/ScrollBar.astro';
 import VideoBanner from '../components/VideoBanner.astro';
 ---
 
 <Layout>
 	<PageLoader />
+	<ScrollBar />
 	<Nav />
 	<HeroSection />
+  <VideoBanner />
+	<IntroText />
 	<!-- <OurWorkSection /> -->
-	<VideoBanner />
-	<Form />
 	<Blog />
+	<ContactText />
+	<Form />
 	<Banner />
   <Footer />
 </Layout>
+
