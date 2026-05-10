@@ -161,7 +161,7 @@
 .hero-headline {
   font-family: var(--font-inter-bold);
   font-weight: 700;
-  font-size: clamp(2rem, 8vw, 3rem);
+  font-size: var(--font-size-m);
   line-height: 1.05;
   letter-spacing: -0.01em;
   display: flex;
@@ -172,7 +172,7 @@
 
 @media (min-width: 769px) {
   .hero-headline {
-    font-size: clamp(2.2rem, 4.5vw, 4.5rem);
+    font-size: var(--font-size-xxl);
     margin-bottom: 2rem;
   }
 }
@@ -194,10 +194,9 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-
 .hero-desc {
   font-family: var(--font-inter-light);
-  font-size: 1rem;
+  font-size: var(--font-size-xs);
   line-height: 1.75;
   color: var(--primary-bordeaux);
 }
@@ -222,7 +221,7 @@
 .team-headline {
   font-family: var(--font-inter-bold);
   font-weight: 700;
-  font-size: clamp(2rem, 8vw, 3rem);
+  font-size: var(--font-size-m);
   line-height: 1.05;
   color: var(--primary-bordeaux);
   margin-bottom: 2rem;
@@ -230,7 +229,7 @@
 
 @media (min-width: 769px) {
   .team-headline {
-    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    font-size: var(--font-size-xxl);
     margin-bottom: 3.5rem;
   }
 }
@@ -356,7 +355,7 @@
 
 .bio-name {
   font-family: var(--font-anastasia-regular);
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: var(--font-size-l);
   font-weight: 400;
   color: var(--primary-bordeaux);
   line-height: 1.1;
@@ -365,7 +364,7 @@
 
 .bio-text {
   font-family: var(--font-inter-light);
-  font-size: 0.95rem;
+  font-size:var(--font-size-xs);
   line-height: 1.8;
   color: var(--primary-bordeaux);
   margin-bottom: 2.5rem;
@@ -399,7 +398,7 @@
 
 .closing-quote p {
   font-family: var(--font-anastasia-regular);
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-size: var(--font-size-m);
   font-weight: 400;
   color: var(--primary-bordeaux);
   line-height: 1.5;
