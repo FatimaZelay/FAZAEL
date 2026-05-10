@@ -1,4 +1,4 @@
-
+<!-- 
 <ul class="embossed-footer">
     <li>
         <img class="embossed-logo" src="/images/embossed-logo.png" width="150" height="150" alt="Fazael Logo with embossed effect">
@@ -81,26 +81,58 @@
     <li>
         <img class="embossed-logo" src="/images/embossed-logo.png" width="150" height="150" alt="">
     </li>
-</ul>
-
+</ul> -->
+<div>
+    <img class="embossed" src="/images/embossed.png" alt="Fazael initials (FZ) withembossed effect">
+</div>
 <footer>
-    <ul class="footer-nav">
-        <li>
-            <a href="#">our work</a>
-        </li>
-        
-        <li>
-            <a href="#">contact</a>
-        </li>
-        
-        <li>
-            <a href="/workethic">work ethic</a>
-        </li>
-        
-        <li>
-            <a href="#">terms & conditions</a>
-        </li>
-    </ul>
+    <nav>
+        <ul class="insights">
+            <li>
+                <h2>insights</h2>
+            </li>
+            
+            <li>
+                <a href="/contact">work ethic</a>
+            </li>
+            
+            <li>
+                <a href="/workethic">our work</a>
+            </li>
+            
+            <li>
+                <a href="/terms-and-conditions">blog</a>
+            </li>
+        </ul>
+
+        <ul class="connect">
+            <li>
+                <h2>let's connect</h2>
+            </li>
+            
+            <li>
+                <a href="/aboutus">about us</a>
+            </li>
+            
+            <li>
+                <a href="/contact">contact</a>
+            </li>
+        </ul>
+
+        <ul class="legal">
+            <li>
+                <h2>legal</h2>
+            </li>
+
+            <li>
+                <a href="/contact">privacy statement</a>
+            </li>
+            
+            <li>
+                <a href="/terms-and-conditions">terms & conditions</a>
+            </li>
+        </ul>
+    </nav>
 
     <ul class="contact-info">
         <li>
@@ -118,6 +150,15 @@
 </footer>
 
 <style>
+
+    .embossed {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    
+    /*
     .embossed-footer {
         display: flex;
         justify-content: center;
@@ -129,26 +170,21 @@
         margin-top: 0;
     }
 
-    footer {
-        background-color: var(--primary-bone);
-        padding: .5em 2em 2em 2em;
-    }
-
-    .footer-nav {
+    nav {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2em;
-        padding-bottom: 2em;
+        flex-direction: row;
+        column-gap: 30em;
+        flex-wrap: wrap;
+        padding: 3em 1em;
     }
 
-    .footer-nav li {
-        font-size: var(--font-size-s);
-        &:hover{
-            cursor: pointer;
-            transform: translateX(.5em);
-            transition: transform 0.3s ease;
-        }
+    .insights, .connect, .legal, .contact-info li {
+        font-size: clamp(var(--font-size-base), 2.5vw, var(--font-size-s));
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: clamp(var(--font-size-s), 3vw, var(--font-size-m));
     }
 
     li {
@@ -168,12 +204,12 @@
         padding: 2em 0;
         @media (min-width: 768px) {
             flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+            column-gap: 27em;
+            flex-wrap: wrap;
         }
     }
 
     .contact-info li {
         font-size: var(--font-size-base);
-    }
+    } */
 </style>
