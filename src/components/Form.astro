@@ -1,9 +1,12 @@
+---
+    const { variant } = Astro.props;
+---
 <section class="contact">
     <header class="contact-header">
         <h2 class="contact-title">Contact</h2>
     </header>
 
-    <form class="contact-form">
+    <form class={`contact-form ${variant}`}>
         <div class="contact-row">
             <input class="contact-input" type="text" name="name" placeholder="name" />
             <input class="contact-input" type="email" name="email" placeholder="e-mail" />
@@ -96,7 +99,7 @@
     width: 100%;
 
     &::placeholder {
-        color: var(--neutral-black);
+        color: var(--primary-bordeaux);
     }
 }
 
@@ -121,4 +124,14 @@
     }
 }
 
+/* Additional styling for the page variant */
+.contact-form.page .contact-row {
+    padding-top: 10em;
+    flex-direction: column;
+}
+
+.contact-form.page .contact-input {
+    text-align: left;
+    color: var(--primary-bordeaux);
+}
 </style>
