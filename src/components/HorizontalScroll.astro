@@ -1,3 +1,33 @@
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    const wrapper = document.querySelector('.wrapper');
+    let scrollWidth = wrapper.offsetWidth;
+    let amountToScroll = scrollWidth - window.innerWidth;
+    let mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const tween =  gsap.to(wrapper, {
+            x: -amountToScroll,
+            duration: 3,
+            ease: 'none',
+            }
+        );
+        
+        ScrollTrigger.create({
+            trigger: wrapper,
+            start: "top 20%",
+            end: "+=" + amountToScroll,
+            pin: true,
+            animation: tween,
+            scrub: 1,
+        });
+            
+    });    
+</script>
 
 <div class="wrapper">
     <section class="scroll-section">
