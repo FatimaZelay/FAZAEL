@@ -1,37 +1,86 @@
 <section class="hero">
-    <h1>
-        We build accessible
-        <span class="script">Websites</span>
-        and make your vision come into reality
+    <h1 id="hero-title">
+        We create for
+        <em>female</em>
+        entrepreneurs. You
+        <em>visualize</em>
+        We design & build your <em>website</em>
     </h1>
 </section>
 
+<script>
+    document.documentElement.classList.add("js");
+
+    const title = document.getElementById("hero-title");
+    if (title) {
+        const nodes = Array.from(title.childNodes);
+        const fragment = document.createDocumentFragment();
+
+        nodes.forEach((node, i) => {
+            const span = document.createElement(
+                node.nodeName === "EM" ? "em" : "span",
+            );
+            span.textContent = node.textContent;
+            span.style.display = "inline-block";
+            span.style.margin = "0 0.10em";
+            span.style.animation = `fadeUp 0.9s cubic-bezier(0.22, 0.68, 0, 1.1) ${4 + i * 0.1}s both`;
+            fragment.appendChild(span);
+        });
+
+        title.innerHTML = "";
+        title.appendChild(fragment);
+    }
+</script>
+
 <style>
     .hero {
-        min-height: 90vh;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
+
         @media (min-width: 768px) {
             padding-top: 10em;
         }
     }
 
-    .hero-content {
-        max-width: 20em;
-    }
-
     .hero h1 {
-        line-height: 1.5;
-        font-weight: 400;
-        font-family: var(--font-inter-regular);
+        font-family: var(--font-inter-bold);
+        font-weight: 700;
+        font-size: var(--font-size-s);
+        line-height: 1.05;
+        margin: 0 0.1em;
+        letter-spacing: -0.05em;
         color: var(--primary-bordeaux);
-        max-width: 20em;
+        max-width: 25ch;
+        animation: fadeUp 0.9s cubic-bezier(0.22, 0.68, 0, 1.1) 0.2s both; /* Here's where the CSS fallback starts, whole h1 fades up as one block when JS is off */
+
+        @media (min-width: 769px) {
+            font-size: clamp(2.2rem, 4.5vw, 4.5rem);
+        }
     }
 
-    .script {
-        font-family: var(--font-anastasia-italic);
-        font-size: 3em;
+
+    /* if JS is off, the CSS fallback starts here */
+    :global(.hero h1 em) {
+        font-family: var(--font-anastasia-regular);
+        font-weight: 400;
+        color: var(--neutral-browngreen);
+        animation: fadeUp 1.5s cubic-bezier(0.22, 0.68, 0, 1.1) 0.8s both;
+    }
+
+
+    /* the keyframe animation is defined, used by both the CSS fallback and JS */
+
+    :global(@keyframes fadeUp) {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 </style>

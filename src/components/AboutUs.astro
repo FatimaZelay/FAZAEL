@@ -1,0 +1,448 @@
+<section class="hero">
+    <div class="hero-headline">
+        <div>
+            We're two <em>female</em><br>
+            developers, we build and create<br>
+        </div>
+    </div>
+
+    <p class="intro-text">
+      Fazael is a creative digital agency focused on helping female
+      entrepreneurs bring their vision to life. We design websites, and
+      digital experiences that feel elegant, intentional, and built to
+      grow with purpose
+  </p>
+
+<p class="intro-text">
+  "It should be easy for woman to translate their creativity into a
+  reality"
+</p>
+</section>
+
+<section class="team-section">
+    <h1 class="team-headline">The two of <em>us.</em></h1>
+
+    <div class="team-grid">
+        <div class="thumb-strip">
+            <div class="thumb active" data-person="Fatima">
+                <img src="/images/Fatima.png" alt="Fatima Z">
+            </div>
+            <div class="thumb" data-person="Karima">
+                <img src="/images/Karima.png" alt="Karima M">
+            </div>
+        </div>
+
+        <div class="featured-img">
+            <img
+                id="img-Fatima"
+                src="/images/Fatima.png"
+                alt="Fatima Z"
+                class="featured visible"
+            >
+            <img
+                id="img-Karima"
+                src="/images/Karima.png"
+                alt="Karima M"
+                class="featured"
+            >
+        </div>
+
+        <div class="bio-panel">
+            <div class="person-panel active" id="bio-Fatima">
+                <div class="bio-role">
+                    Co-Founder &middot; Frontend Developer & UI/UX Designer
+                </div>
+                <p class="bio-name">Fatima Z</p>
+                <p class="bio-text">
+                    Fatima has always been passionate about creativity. At just
+                    18 years old, she started her own business to turn ideas
+                    into meaningful designs. Today, she helps female
+                    entrepreneurs bring their vision to life through branding
+                    and modern digital experiences.
+                </p>
+                <div class="bio-stats">
+                    <div>
+                        <div class="stat-label">Based in</div>
+                        <div class="stat-value">Amsterdam</div>
+                    </div>
+                    <div>
+                        <div class="stat-label">Building since</div>
+                        <div class="stat-value">2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="person-panel" id="bio-Karima">
+                <div class="bio-role">
+                    Co-Founder &middot; Frontend Developer &amp; UI/UX Designer
+                </div>
+                <p class="bio-name">Karima M</p>
+                <p class="bio-text">
+                    I'm Karima, a frontend designer and developer based in
+                    Amsterdam. Specializing in building modern and user-friendly
+                    websites. With a strong focus on detail and accessibility I
+                    transform ideas into powerful digital experiences. As a
+                    master's degree student in International Technology law and
+                    Internet law & IE I also build websites in compliance with
+                    current European and International legislation.
+                </p>
+                <ul class="bio-stats">
+                    <li>
+                        <div class="stat-label">Based in</div>
+                        <div class="stat-value">Amsterdam</div>
+                    </li>
+                    <li>
+                        <div class="stat-label">Building since</div>
+                        <div class="stat-value">2024</div>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<blockquote class="closing-quote">
+    <p>
+        "It should be easy for woman to translate their creativity into a
+        reality"
+    </p>
+</blockquote>
+
+<script>
+    const thumbs = document.querySelectorAll<HTMLElement>(".thumb");
+
+    thumbs.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+            const name = thumb.dataset.person;
+            if (!name) return;
+
+            thumbs.forEach((t) => t.classList.remove("active"));
+            thumb.classList.add("active");
+
+            document
+                .querySelectorAll<HTMLElement>(".featured")
+                .forEach((img) => {
+                    if (img.id === `img-${name}`) {
+                        img.style.opacity = "0";
+                        img.classList.add("visible");
+                        requestAnimationFrame(() => {
+                            img.style.transition = "opacity 0.45s ease";
+                            img.style.opacity = "1";
+                        });
+                    } else {
+                        img.style.opacity = "0";
+                        setTimeout(() => img.classList.remove("visible"), 440);
+                    }
+                });
+
+            document
+                .querySelectorAll<HTMLElement>(".person-panel")
+                .forEach((panel) => {
+                    panel.classList.toggle(
+                        "active",
+                        panel.id === `bio-${name}`,
+                    );
+                });
+        });
+    });
+
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    import SplitText from "gsap/SplitText";
+
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+
+        const split = new SplitText(".intro-text", { type: "words" });
+
+        gsap.from(split.words,{
+            opacity: 0.2,
+            stagger: {each: 0.4},
+            scrollTrigger: {
+                trigger: ".intro-text",
+                start: "top 30%", /*You can play with the percentage for the mobile version*/
+                end: "top 2%",
+                scrub: true,
+            },
+        }
+        );
+    });
+</script>
+</script>
+
+<style>
+.hero {
+  padding: 6rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 769px) {
+    min-height: 40vh;
+    padding: 20rem 3.5rem;
+  }
+}
+
+.hero-headline {
+  font-family: var(--font-inter-bold);
+  font-weight: 700;
+  font-size: var(--font-size-m);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  color: var(--primary-bordeaux);
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 769px) {
+    font-size: var(--font-size-xxl);
+    margin-bottom: 2rem;
+  }
+}
+
+.hero-headline em {
+  font-family: var(--font-anastasia-regular);
+  font-weight: 400;
+  color: var(--neutral-browngreen);
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 769px) {
+  .hero-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.intro-text {
+        line-height: 1.5;
+        font-weight: 400;
+        font-family: var(--font-inter-light);
+        font-size: var(--font-size-xs);
+        color: var(--primary-bordeaux);
+        @media (min-width: 768px) {
+            max-width: 25.5em;
+        }
+      }
+
+
+.team-section {
+  padding: 3rem 1.5rem;
+  overflow-x: clip;
+}
+
+@media (min-width: 769px) {
+  .team-section {
+    padding: 4rem 5rem;
+  }
+}
+
+.team-headline {
+  font-family: var(--font-inter-bold);
+  font-weight: 700;
+  font-size: var(--font-size-m);
+  line-height: 1.05;
+  color: var(--primary-bordeaux);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 769px) {
+  .team-headline {
+    font-size: var(--font-size-xxl);
+    margin-bottom: 3.5rem;
+  }
+}
+
+.team-headline em {
+  font-family: var(--font-anastasia-regular);
+  font-weight: 400;
+  color: var(--neutral-browngreen);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem 0;
+  align-items: start;
+  min-width: 0;
+}
+
+@media (min-width: 769px) {
+  .team-grid {
+    grid-template-columns: 200px minmax(0, 560px) clamp(240px, 28%, 340px);
+    gap: 0 4rem;
+  }
+}
+
+.thumb-strip {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  min-width: 0;
+}
+
+@media (min-width: 769px) {
+  .thumb-strip {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+}
+
+.thumb {
+  position: relative;
+  cursor: pointer;
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 2px solid var(--secundary-beige);
+  box-shadow: 0 0 0 5px var(--primary-bone), 0 0 0 7px var(--secundary-beige);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+@media (min-width: 769px) {
+  .thumb {
+    flex: unset;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.thumb.active {
+  border: 2px solid var(--primary-bone);
+  box-shadow: 0 0 0 5px var(--primary-bone), 0 0 0 8px var(--primary-bordeaux);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.8);
+  transition: filter 0.3s;
+}
+
+.thumb.active img {
+  filter: grayscale(0);
+}
+
+.featured-img {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.featured {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  display: none;
+}
+
+.featured.visible {
+  display: block;
+  opacity: 1;
+}
+
+.bio-panel {
+  min-width: 0;
+}
+
+.person-panel {
+  display: none;
+}
+
+.person-panel.active {
+  display: block;
+}
+
+.bio-role {
+  font-family: var(--font-inter-medium);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--neutral-browngreen);
+  margin-bottom: 0.6rem;
+}
+
+.bio-name {
+  font-family: var(--font-anastasia-regular);
+  font-size: var(--font-size-l);
+  font-weight: 400;
+  color: var(--primary-bordeaux);
+  line-height: 1.1;
+  margin-bottom: 1.4rem;
+}
+
+.bio-text {
+  font-family: var(--font-inter-light);
+  font-size:var(--font-size-xs);
+  line-height: 1.8;
+  color: var(--primary-bordeaux);
+  margin-bottom: 2.5rem;
+}
+
+.bio-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+.stat-label {
+  font-family: var(--font-inter-medium);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neutral-browngreen);
+  margin-bottom: 0.2rem;
+}
+
+.stat-value {
+  font-family: var(--font-anastasia-regular);
+  font-size: 1.1rem;
+  color: var(--primary-bordeaux);
+}
+
+.closing-quote {
+  padding: 5rem 1.5rem 4rem;
+  margin-top: 3rem;
+}
+
+.closing-quote p {
+  font-family: var(--font-anastasia-regular);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  color: var(--primary-bordeaux);
+  line-height: 1.5;
+  max-width: 26ch;
+}
+
+@media (min-width: 769px) {
+  .closing-quote {
+    padding: 5rem 3.5rem 4rem;
+    margin-top: 5rem;
+  }
+}
+
+@keyframes fadeUp {
+  
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-headline { animation: fadeUp 0.9s cubic-bezier(0.22, 0.68, 0, 1.1) both; }
+.hero-desc     { animation: fadeUp 1.1s 0.12s cubic-bezier(0.22, 0.68, 0, 1.1) both; }
+</style>

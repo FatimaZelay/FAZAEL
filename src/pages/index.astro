@@ -8,19 +8,23 @@ import Form from '../components/Form.astro';
 import Blog from '../components/Blog.astro';
 import OurWorkSection from '../components/OurWorkSection.astro';
 import Banner from '../components/Banner.astro';
+import Cursor from '../components/Cursor.astro';
 import IntroText from '../components/IntroText.astro';
 import ContactText from '../components/ContactText.astro';
 import ScrollBar from '../components/ScrollBar.astro';
 import VideoBanner from '../components/VideoBanner.astro';
+import HorizontalScroll from '../components/HorizontalScroll.astro';
 ---
 
 <Layout>
 	<PageLoader />
+	<Cursor />
 	<ScrollBar />
 	<Nav />
 	<HeroSection />
-  <VideoBanner />
+  	<VideoBanner />
 	<IntroText />
+	<HorizontalScroll text="FAZAEL. A digital agency based in Amsterdam." />
 	<!-- <OurWorkSection /> -->
 	<Blog />
 	<ContactText />
