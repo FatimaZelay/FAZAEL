@@ -1,7 +1,7 @@
 ---
     const { variant } = Astro.props;
 ---
-<section class="contact">
+<section class={`contact ${variant}`}>
     <header class={`contact-header ${variant}`}>
         <h2 class="contact-title">Contact</h2>
     </header>
@@ -125,8 +125,11 @@
 }
 
 /* Additional styling for the page variant */
-.contact-header.page{
-    margin-top: 10em;
+.contact-header.page {
+    margin-top: 5em;
+    @media (min-width: 768px) {
+        margin-top: 10em;
+    }
 }
 .contact-form.page .contact-row {
     flex-direction: column;
@@ -135,5 +138,9 @@
 .contact-form.page .contact-input {
     text-align: left;
     color: var(--primary-bordeaux);
+}
+
+.contact.page {
+    margin: 0;
 }
 </style>

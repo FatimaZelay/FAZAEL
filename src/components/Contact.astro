@@ -1,0 +1,26 @@
+---
+import Form from '../components/Form.astro';
+---
+
+<h1>Get in Touch with us.</h1>
+<h2>Got a vision for your business</h2>
+<h2>Let's build it together.</h2>
+
+<div class="form">
+    <Form variant="page" />
+    <img src="/images/contact.png" alt="" width="400" height="520">
+</div>
+
+<style>
+    .form {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            column-gap: 5em;
+        }
+    }
+</style>
+
