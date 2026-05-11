@@ -6,14 +6,17 @@
         </div>
     </div>
 
-    <div class="hero-bottom">
-        <p class="hero-desc">
-            Fazael is a creative digital agency focused on helping female
-            entrepreneurs bring their vision to life. We design websites, and
-            digital experiences that feel elegant, intentional, and built to
-            grow with purpose
-        </p>
-    </div>
+    <p class="intro-text">
+      Fazael is a creative digital agency focused on helping female
+      entrepreneurs bring their vision to life. We design websites, and
+      digital experiences that feel elegant, intentional, and built to
+      grow with purpose
+  </p>
+
+<p class="intro-text">
+  "It should be easy for woman to translate their creativity into a
+  reality"
+</p>
 </section>
 
 <section class="team-section">
@@ -142,6 +145,32 @@
                 });
         });
     });
+
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    import SplitText from "gsap/SplitText";
+
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+
+        const split = new SplitText(".intro-text", { type: "words" });
+
+        gsap.from(split.words,{
+            opacity: 0.2,
+            stagger: {each: 0.4},
+            scrollTrigger: {
+                trigger: ".intro-text",
+                start: "top 30%", /*You can play with the percentage for the mobile version*/
+                end: "top 2%",
+                scrub: true,
+            },
+        }
+        );
+    });
+</script>
 </script>
 
 <style>
@@ -190,12 +219,17 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-.hero-desc {
-  font-family: var(--font-inter-light);
-  font-size: var(--font-size-xs);
-  line-height: 1.75;
-  color: var(--primary-bordeaux);
-}
+
+.intro-text {
+        line-height: 1.5;
+        font-weight: 400;
+        font-family: var(--font-inter-light);
+        font-size: var(--font-size-xs);
+        color: var(--primary-bordeaux);
+        @media (min-width: 768px) {
+            max-width: 25.5em;
+        }
+      }
 
 @media (min-width: 769px) {
   .hero-desc {
