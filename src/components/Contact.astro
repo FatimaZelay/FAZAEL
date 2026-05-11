@@ -2,9 +2,11 @@
 import Form from '../components/Form.astro';
 ---
 
-<h1>Get in Touch with us.</h1>
-<h2>Got a vision for your business</h2>
-<h2>Let's build it together.</h2>
+<section>
+    <h1>Get in touch with <em>us.</em></h1>
+    <p>Got a vision for your business?</p>
+    <p>Let's build it together.</p>
+</section>
 
 <div class="form">
     <Form variant="page" />
@@ -22,5 +24,44 @@ import Form from '../components/Form.astro';
             column-gap: 5em;
         }
     }
+
+    section {
+        margin-top: 5em;
+        padding: 2em 1em 2em 2em;
+        @media (min-width: 768px) {
+            margin-top: 15em;
+        }
+    }
+
+    section p:nth-of-type(1) {
+        margin-top: 2em;
+    }
+
+    h1 {
+        font-family: var(--font-inter-bold);
+        font-size: clamp(var(--font-size-l), 10svw, var(--font-size-xxxl));
+        font-weight: 700;
+        line-height: 1.05;
+        color: var(--primary-bordeaux);
+    }
+
+    em {
+        font-family: var(--font-anastasia-regular);
+        font-weight: 400;
+        color: var(--neutral-browngreen);
+    }
+
+    p {
+        line-height: 1.5;
+        font-weight: 400;
+        font-family: var(--font-inter-regular);
+        font-size: clamp(var(--font-size-s), 2vw, var(--font-size-xl));
+        color: var(--primary-bordeaux);
+    }
+
+    img {
+        max-width: 100vw;
+    }
+
 </style>
 
