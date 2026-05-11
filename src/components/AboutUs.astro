@@ -169,7 +169,6 @@
         );
     });
 </script>
-</script>
 
 <style>
 .hero {
@@ -186,7 +185,7 @@
 .hero-headline {
   font-family: var(--font-inter-bold);
   font-weight: 700;
-  font-size: var(--font-size-m);
+  font-size: clamp(var(--font-size-l), 10vw, var(--font-size-xxxl));
   line-height: 1.05;
   letter-spacing: -0.01em;
   display: flex;
@@ -195,7 +194,6 @@
   margin-bottom: 1.5rem;
 
   @media (min-width: 769px) {
-    font-size: var(--font-size-xxl);
     margin-bottom: 2rem;
   }
 }
@@ -222,7 +220,7 @@
         line-height: 1.5;
         font-weight: 400;
         font-family: var(--font-inter-light);
-        font-size: var(--font-size-xs);
+        font-size:  clamp(var(--font-size-s), 5vw, var(--font-size-m));
         color: var(--primary-bordeaux);
         @media (min-width: 768px) {
             max-width: 25.5em;
