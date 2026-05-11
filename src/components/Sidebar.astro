@@ -26,6 +26,10 @@ const links = items.map((item) => ({
 </aside>
 
 <style>
+  body.menu-open .sidebar {
+    display: none;
+  }
+
   .sidebar {
     display: flex;
     flex-direction: column;
@@ -46,6 +50,7 @@ const links = items.map((item) => ({
       padding-top: 8px;
     }
   }
+
 
   .sidebar-item {
     display: flex;
