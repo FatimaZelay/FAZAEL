@@ -1,6 +1,37 @@
 ---
-import Form from '../components/Form.astro';
+    import Form from '../components/Form.astro';
+    import HorizontalScroll from '../components/HorizontalScroll.astro';
+    import ScrollBar from '../components/ScrollBar.astro';
+    import Banner from '../components/Banner.astro';
 ---
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    import SplitText from "gsap/SplitText";
+
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+
+        const split = new SplitText("p", { type: "words" });
+
+        gsap.from(split.words,{
+            opacity: 0.2,
+            stagger: {each: 0.4},
+            scrollTrigger: {
+                trigger: "p",
+                start: "top 30%",
+                end: "top 5%",
+                scrub: true,
+            },
+        }
+        );
+    });
+</script>
+
+<ScrollBar />
 
 <section>
     <h1>Get in touch with <em>us.</em></h1>
@@ -8,15 +39,19 @@ import Form from '../components/Form.astro';
     <p>Let's build it together.</p>
 </section>
 
+<HorizontalScroll text="Don't be shy. Let's talk." />
+
 <div class="form">
     <Form variant="page" />
     <img src="/images/contact.png" alt="" width="400" height="520">
 </div>
 
+<Banner />
 <style>
     .form {
         display: flex;
         flex-direction: column;
+        padding-bottom: 3em;
         @media (min-width: 768px) {
             flex-direction: row;
             justify-content: center;
@@ -27,9 +62,10 @@ import Form from '../components/Form.astro';
 
     section {
         margin-top: 5em;
-        padding: 2em 1em 2em 2em;
+        padding: 2em 1em 2em 3em;
         @media (min-width: 768px) {
-            margin-top: 15em;
+            margin-top: 19em;
+            margin-bottom: 9em;
             padding-left: 4em;
         }
     }
