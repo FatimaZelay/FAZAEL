@@ -1,0 +1,73 @@
+---
+    const { text } = Astro.props;
+---
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    const wrapper = document.querySelector('.wrapper');
+    let mm = gsap.matchMedia();
+
+    function getScrollAmount () {
+        let scrollWidth = wrapper.scrollWidth;
+        return -(scrollWidth - window.innerWidth);
+    }
+   
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const tween =  gsap.to(wrapper, {
+            x: getScrollAmount,
+            ease: 'none',
+            }
+        );
+        
+        ScrollTrigger.create({
+            trigger: wrapper,
+            start: "top 20%",
+            end: () => `+=${getScrollAmount() * -1} top`,
+            pin: true,
+            animation: tween,
+            invalidateOnRefresh: true,
+            scrub: 1,
+        });
+            
+    });    
+</script>
+
+<div class="scroll-container">
+    <section class="wrapper">
+        <article class="scroll-section">
+                <h2 class="fazael">{ text }</h2>
+        </article>
+    </section>
+</div>
+
+<style>
+    .scroll-container {
+        overflow: hidden;
+        width: 100vw;
+    }
+
+    .wrapper {
+        display: flex;
+        width: max-content;
+    }
+
+    .scroll-section {
+        padding: 4em 0 0 3em;
+        white-space: nowrap;
+        @media (min-width: 768px) {
+            padding: 4em 0 0 4.5em;
+        }
+    }
+
+    h2 {
+        font-size: 10em;
+        font-family: var(--font-inter-bold);
+        color: var(--primary-bordeaux);
+        @media (min-width: 768px) {
+            font-size: 15em;
+        }
+    }
+</style>
