@@ -87,6 +87,7 @@ body {
     --font-anastasia-italic: 'Anastasia', cursive;
 
     /* Font sizes */
+    --font-size-xxxl: 4rem;      /* 48px */
     --font-size-xxl: 3rem;      /* 48px */
     --font-size-xl: 2.488rem;   /* 39.81px */
     --font-size-l: 2.074rem;    /* 33.18px */
