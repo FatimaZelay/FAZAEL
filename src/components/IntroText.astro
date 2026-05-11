@@ -1,0 +1,45 @@
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    import SplitText from "gsap/SplitText";
+
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+
+        const split = new SplitText(".intro", { type: "words" });
+
+        gsap.from(split.words,{
+            opacity: 0.2,
+            stagger: {each: 0.4},
+            scrollTrigger: {
+                trigger: ".intro",
+                start: "top 60%",
+                end: "top 5%",
+                scrub: true,
+            },
+        }
+        );
+    });
+</script>
+
+<section>
+    <p class="intro">FAZAEL is a digital agency founded by two female web developers based in Amsterdam. Our mission is to make websites more accessible for female entrepreneurs.</p>
+</section>
+
+<style>
+    p {
+        line-height: 1.5;
+        font-weight: 400;
+        font-family: var(--font-inter-regular);
+        font-size: clamp(var(--font-size-m), 2vw, var(--font-size-xl));
+        color: var(--primary-bordeaux);
+        padding: 4em 2em 3em 2em;
+        @media (min-width: 768px) {
+            max-width: 25.5em;
+            padding: 4em 0 3em 3em;
+        }
+    }
+</style>
