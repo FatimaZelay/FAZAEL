@@ -1,112 +1,208 @@
-<main class="main">
+---
+// @ts-nocheck
+import Sidebar from "../components/Sidebar.astro";
+
+const sections = [
+  { label: "1. Introduction", id: "introduction" },
+  { label: "2. Data we collect", id: "data" },
+  { label: "3. How we use it", id: "usage" },
+  { label: "4. Cookies", id: "cookies" },
+  { label: "5. Third parties", id: "thirdparties" },
+  { label: "6. Retention", id: "retention" },
+  { label: "7. Your rights", id: "rights" },
+  { label: "8. Contact", id: "contact" }
+];
+---
+
+<div class="content-area">
+  <Sidebar items={sections} />
+
+  <main class="main">
     <h1 class="page-title">Privacy Statement</h1>
 
     <section class="section" id="introduction">
-        <h2 class="section-title">1. Introduction</h2>
-        <p class="body-text">
-            Contrary to popular belief, Lorem Ipsum is not simply random text...
-        </p>
+      <h2 class="section-title">1. Introduction</h2>
+      <p class="body-text">
+        At Fazael, we take your privacy seriously. This privacy statement explains how we collect, use, and protect your personal data when you visit our website or use our services. We are committed to being transparent about our data practices and ensuring your information is handled with care and respect.
+      </p>
     </section>
 
     <section class="section" id="data">
-        <h2 class="section-title">2. Data we collect</h2>
-        <p class="body-text">We collect information you provide directly...</p>
+      <h2 class="section-title">2. Data we collect</h2>
+      <p class="body-text">
+        We may collect personal information such as your name, email address, and any details you provide when filling out our contact form. We also collect technical data such as your IP address, browser type, and pages visited through cookies and analytics tools. We only collect data that is necessary for the purpose it is used.
+      </p>
     </section>
 
     <section class="section" id="usage">
-        <h2 class="section-title">3. How we use it</h2>
-        <p class="body-text">
-            We use your data to provide, improve, and personalize our
-            services...
-        </p>
+      <h2 class="section-title">3. How we use it</h2>
+      <p class="body-text">
+        We use your data to respond to your enquiries, improve our website, and provide you with the best possible experience. We do not sell your data to third parties. Your information may be used to send you relevant updates or project information if you have given us permission to do so.
+      </p>
     </section>
 
     <section class="section" id="cookies">
-        <h2 class="section-title">4. Cookies</h2>
-        <p class="body-text">
-            Our site uses cookies to enhance your experience...
-        </p>
+      <h2 class="section-title">4. Cookies</h2>
+      <p class="body-text">
+        Our website uses cookies to enhance your browsing experience. Cookies are small text files placed on your device that help us understand how visitors interact with our site. You can choose to disable cookies in your browser settings at any time, though this may affect the functionality of certain parts of the website.
+      </p>
     </section>
 
     <section class="section" id="thirdparties">
-        <h2 class="section-title">5. Third parties</h2>
-        <p class="body-text">
-            We may share information with trusted third party service
-            providers...
-        </p>
+      <h2 class="section-title">5. Third parties</h2>
+      <p class="body-text">
+        We may share your data with trusted third-party service providers who assist us in operating our website and conducting our business, provided they agree to keep your information confidential. These parties are only given access to the data they need to perform their services and are not permitted to use it for any other purpose.
+      </p>
     </section>
 
     <section class="section" id="retention">
-        <h2 class="section-title">6. Retention</h2>
-        <p class="body-text">
-            We retain your personal data only as long as necessary...
-        </p>
+      <h2 class="section-title">6. Retention</h2>
+      <p class="body-text">
+        We retain your personal data only for as long as necessary to fulfil the purposes for which it was collected, or as required by law. Once your data is no longer needed, it is securely deleted or anonymised. You may request the deletion of your data at any time by contacting us directly.
+      </p>
     </section>
 
     <section class="section" id="rights">
-        <h2 class="section-title">7. Your rights</h2>
-        <p class="body-text">
-            You have the right to access, correct, or delete your personal
-            data...
-        </p>
+      <h2 class="section-title">7. Your rights</h2>
+      <p class="body-text">
+        Under applicable data protection legislation, you have the right to access, correct, or delete the personal data we hold about you. You also have the right to object to or restrict how we process your data. To exercise any of these rights, please reach out to us using the contact details below and we will respond promptly.
+      </p>
     </section>
 
     <section class="section" id="contact">
-        <h2 class="section-title">8. Contact</h2>
-
-        <p class="contact-text">
-            If you have any questions, contact us at
-            <a href="mailto:fazael.contact@gmail.com">
-                fazael.contact@gmail.com
-            </a>
-            or use our
-            <a href="/contact">contact form</a>.
-        </p>
+      <h2 class="section-title">8. Contact</h2>
+      <p class="contact-text">
+        If you have any questions about this privacy statement or how we handle your data, please contact us at
+        <a href="mailto:fazael.contact@gmail.com">fazael.contact@gmail.com</a>
+        or use our <a href="/contact">contact form</a>. We are happy to help and will respond as soon as possible.
+      </p>
     </section>
-</main>
+  </main>
+</div>
+
+<script>
+  const links = document.querySelectorAll('.sidebar-item');
+  const navbar = document.querySelector('nav') || document.querySelector('header');
+  const navbarHeight = navbar ? navbar.offsetHeight : 0;
+  let isScrolling = false;
+
+  function setActive(id = '') {
+    links.forEach((link) => {
+      if (!(link instanceof HTMLElement)) return;
+      link.classList.remove('active');
+      const linkId = (link.getAttribute('href') || '').replace('#', '');
+      if (linkId === id) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  function getActiveSection() {
+    const sections = [...document.querySelectorAll('.section')];
+    let active = sections[0];
+    const trigger = navbarHeight + window.innerHeight * 0.3;
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= trigger) {
+        active = section;
+      }
+    });
+    return active ? active.id : null;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (isScrolling) return;
+    const id = getActiveSection();
+    if (id) setActive(id);
+  }, { passive: true });
+
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = (link.getAttribute('href') || '').replace('#', '');
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      isScrolling = true;
+      setActive(id);
+
+      const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
+
+      if ('onscrollend' in window) {
+        window.addEventListener('scrollend', () => {
+          isScrolling = false;
+        }, { once: true });
+      } else {
+        setTimeout(() => {
+          isScrolling = false;
+        }, 800);
+      }
+    });
+  });
+</script>
 
 <style>
-    .main {
-        display: flex;
-        flex-direction: column;
-        gap: clamp(2.5rem, 5vw, 3.75rem);
-        max-width: 37.5rem;
-        margin: 0 auto;
-        padding: 14rem 1.25rem;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 
-    .section-title {
-        font-family:
-            var(--font-anastasia-italic), var(--font-anastasia-regular);
-        color: var(--primary-bordeaux);
-        font-weight: normal;
-        font-size: clamp(var(--font-size-base), 3vw, var(--font-size-l));
-        margin-bottom: clamp(1rem, 2vw, 1.5rem);
-    }
+  .content-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 30px;
+    width: 100%;
+    align-items: flex-start;
+    padding: 100px 16px 40px 8px;
 
-    .page-title {
-        font-family: var(--font-anastasia-regular);
-        color: var(--primary-bordeaux);
-        text-align: center;
-        font-weight: normal;
-        font-size: clamp(var(--font-size-s), 6vw, var(--font-size-m));
-        text-transform: uppercase
+    @media (min-width: 768px) {
+      gap: 60px;
+      padding: 250px 60px 40px 60px;
     }
+  }
 
-    .contact-text a {
-        color: var(--primary-bordeaux);
-        text-decoration: none;
-        font-weight: 900;
-    }
+  .page-title {
+    font-family: var(--font-anastasia-regular);
+    color: var(--primary-bordeaux);
+    font-weight: normal;
+    font-size: clamp(var(--font-size-s), 6vw, var(--font-size-m));
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 0;
 
-    .contact-text a:hover {
-        text-decoration: underline;
-        opacity: 0.8;
-        
+    @media (min-width: 768px) {
+      margin-left: -200px;
     }
-    a:focus-visible {
-        outline: 2px solid var(--primary-bordeaux);
-        outline-offset: 4px;
-        border-radius: 2px;
-    }
+  }
+
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 3.75rem);
+  }
+
+  .section {
+    scroll-margin-top: 100px;
+  }
+
+  .section-title {
+    font-family: var(--font-anastasia-italic);
+    color: var(--primary-bordeaux);
+    font-weight: normal;
+    font-size: clamp(var(--font-size-base), 3vw, var(--font-size-l));
+    margin-bottom: 1rem;
+    padding: 0 1.5rem;
+  }
+
+  .body-text {
+    line-height: 1.7;
+  }
+
+  .contact-text a {
+    color: var(--primary-bordeaux);
+    text-decoration: none;
+    font-weight: 900;
+  }
 </style>
