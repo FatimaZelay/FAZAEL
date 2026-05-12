@@ -202,6 +202,30 @@
         }
     }
 
+    .nav-items-desktop {
+        text-decoration: none;
+        color: var(--primary-bordeaux);
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        @media (min-width: 400px) {
+            background-image: linear-gradient(var(--primary-bordeaux), var(--primary-bordeaux));
+            background-size: 0% .1em;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+
+            @media (prefers-reduced-motion:no-preference) {
+                transition: background-size 0.3s ease;
+            }
+
+            &:hover {
+                background-size: 100% .1em;
+                text-decoration: none;
+            }
+        }
+    }
+
 </style>
 <!-- <script>
     const menuButton = document.querySelector(".open-menu") as HTMLElement;
