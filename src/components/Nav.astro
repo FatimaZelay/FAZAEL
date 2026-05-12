@@ -19,10 +19,11 @@
     </nav>
 
 
-    <nav>
+    <nav class="menu-mobile">
         <a class="logo-desktop" href="/">
-            <img src="/images/3.svg" alt="Logo of FAZAEL CO" width="150" height="75">
+            <img src="/images/initials.svg" alt="Logo of FAZAEL" width="75" height="75">
         </a>
+        
         <button class="open-menu" popovertarget="menu">
             <img src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> menu
         </button>
@@ -30,16 +31,26 @@
 </header>
 
 <style>
-    header {
+    .menu-mobile {
         display: flex;
         justify-content: space-between;
-        background-color: var(--primary-bone);
         position: sticky;
         top: 0;
-        @media (min-width: 768px) {
-            position: relative;
-        }
-       }
+    }
+
+    button {
+        background-color: none;
+        border: none;
+    }
+
+    .open-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-inter-regular);
+        color: var(--primary-bordeaux);
+        padding: 1em;
+    }
 </style>
 <!-- <script>
     const menuButton = document.querySelector(".open-menu") as HTMLElement;
