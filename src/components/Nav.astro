@@ -1,4 +1,47 @@
-<script>
+<header>
+    <nav popover id="menu">
+        <a class="logo-desktop" href="/">
+            <img src="/images/3.svg" alt="Logo of FAZAEL CO" width="150" height="75">
+        </a>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/ourwork">Our work</a></li>
+            <li><a href="/aboutus">About us</a></li>
+            <li><a href="/workethic">Work ethic</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact us</a></li>
+        </ul>
+
+        <button class="close-menu" popovertarget="menu" popovertargetaction="hide">
+            <img src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> sluit
+        </button>
+    </nav>
+
+
+    <nav>
+        <a class="logo-desktop" href="/">
+            <img src="/images/3.svg" alt="Logo of FAZAEL CO" width="150" height="75">
+        </a>
+        <button class="open-menu" popovertarget="menu">
+            <img src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> menu
+        </button>
+    </nav>
+</header>
+
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--primary-bone);
+        position: sticky;
+        top: 0;
+        @media (min-width: 768px) {
+            position: relative;
+        }
+       }
+</style>
+<!-- <script>
     const menuButton = document.querySelector(".open-menu") as HTMLElement;
     const nav = document.querySelector("nav") as HTMLElement;
     const closeMenuButton = document.querySelector(
@@ -28,7 +71,7 @@
 
     <nav>
         <a class="logo-desktop" href="/">
-            <img src="/images/3.svg" alt="Logo of FAZAEL CO" width="150" height="75">
+            <img src="/src/assets/3.svg" alt="Logo of FAZAEL CO" width="150" height="75">
         </a>
 
         <ul>
@@ -41,12 +84,12 @@
         </ul>
 
         <button class="close-menu">
-            <img src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> sluit
+            <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"> sluit
         </button>
     </nav>
 
     <button class="open-menu">
-        <img src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> menu
+        <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"> menu
     </button>
 </header>
 
@@ -176,4 +219,4 @@
     nav.open {
         translate: 0% 0%;
     }
-</style>
+</style> -->
