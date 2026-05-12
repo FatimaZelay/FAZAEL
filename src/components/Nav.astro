@@ -1,4 +1,233 @@
 <script>
+    import { gsap } from "gsap";
+    import SplitText from "gsap/SplitText";
+
+    gsap.registerPlugin(SplitText);
+
+    const menu = document.querySelector("#menu");
+
+    menu?.addEventListener("toggle", () => {
+
+        if (menu.matches(":popover-open")) {
+
+            const split = new SplitText(".nav-items", {
+                type: "words"
+            });
+
+            gsap.from(split.words, {
+                duration: 1.5,
+                delay: 0.1,
+                y: 50,
+                stagger: 0.05,
+                ease: "power2.out"
+
+            });
+        }
+    });
+</script>
+</script>
+
+<header>
+    <a class="logo-desktop" href="/">
+            <img class="img-desktop" src="/images/initials.svg" alt="Logo of FAZAEL" width="75" height="75">
+    </a>
+    <nav class="menu-desktop">
+        
+       
+        <ul class="links-desktop">
+            <li><a class="nav-items-desktop" href="/">Home</a></li>
+            <li><a class="nav-items-desktop" href="/ourwork">Our work</a></li>
+            <li><a class="nav-items-desktop" href="/aboutus">About us</a></li>
+            <li><a class="nav-items-desktop" href="/workethic">Work ethic</a></li>
+            <li><a class="nav-items-desktop" href="/blog">Blog</a></li>
+            <li><a class="nav-items-desktop" href="/contact">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <nav popover id="menu">
+        <ul class="links">
+            <li><a class="nav-items" href="/">Home</a></li>
+            <li><a class="nav-items" href="/ourwork">Our work</a></li>
+            <li><a class="nav-items" href="/aboutus">About us</a></li>
+            <li><a class="nav-items" href="/workethic">Work ethic</a></li>
+            <li><a class="nav-items" href="/blog">Blog</a></li>
+            <li><a class="nav-items" href="/contact">Contact us</a></li>
+        </ul>
+
+        <button class="close-menu" popovertarget="menu" popovertargetaction="hide">
+            <img src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> sluit
+        </button>
+    </nav>
+
+
+    <nav class="menu-mobile">
+        <a class="logo-menu" href="/">
+            <img class="img-menu" src="/images/initials.svg" alt="Logo of FAZAEL" width="75" height="75">
+        </a>
+        
+        <button class="open-menu" popovertarget="menu">
+            <img  src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> menu
+        </button>
+    </nav>
+</header>
+
+<style>
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+
+    .logo-desktop {
+            display: flex;
+    justify-content: center;
+    }
+
+    .menu-desktop {
+        display: none;
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            justify-content: center;
+            padding: 1em 0;
+        }
+    }
+
+    .links-desktop {
+        display: none;
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--neutral-white);
+            width: 40em;
+            border-radius: 1em;
+            padding: 1.5em;
+            box-shadow: 1em 1em 1em var(--neutral-grey);
+        }
+    }
+
+    .links-desktop a {
+        font-family: var(--font-inter-regular);
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--primary-bordeaux);
+    }
+
+    .links li {
+        align-items: center;
+        font-size: clamp(var(--font-size-l), 6vw, var(--font-size-xxl));
+        color: var(--primary-bordeaux);
+    }
+
+    .links a {
+        font-family: var(--font-inter-bold);
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--primary-bordeaux);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 0.1em;
+        right: 0.1em;
+        display: flex;
+        flex-direction: column;
+        row-gap: .3em;
+        padding: 1em;
+        align-items: center;
+        font-family: var(--font-inter-regular);
+        color: var(--primary-bordeaux);
+    }
+
+    .menu-mobile {
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    button {
+        background-color: none;
+        border: none;
+    }
+
+    .open-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-inter-regular);
+        color: var(--primary-bordeaux);
+        padding: 1em;
+        
+    }
+
+    :popover-open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--primary-bone);
+        position: sticky;
+        inset: 0;
+        border: none;
+        transform: translateY(0);
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+
+    .img-desktop {
+        display: none;
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    .img-mobile {
+        display: block;
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    .nav-items-desktop {
+        text-decoration: none;
+        color: var(--primary-bordeaux);
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        @media (min-width: 400px) {
+            background-image: linear-gradient(var(--primary-bordeaux), var(--primary-bordeaux));
+            background-size: 0% .1em;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+
+            @media (prefers-reduced-motion:no-preference) {
+                transition: background-size 0.3s ease;
+            }
+
+            &:hover {
+                background-size: 100% .1em;
+                text-decoration: none;
+            }
+        }
+    }
+
+</style>
+<!-- <script>
     const menuButton = document.querySelector(".open-menu") as HTMLElement;
     const nav = document.querySelector("nav") as HTMLElement;
     const closeMenuButton = document.querySelector(
@@ -28,7 +257,7 @@
 
     <nav>
         <a class="logo-desktop" href="/">
-            <img src="/images/3.svg" alt="Logo of FAZAEL CO" width="150" height="75">
+            <img src="/src/assets/3.svg" alt="Logo of FAZAEL CO" width="150" height="75">
         </a>
 
         <ul>
@@ -41,12 +270,12 @@
         </ul>
 
         <button class="close-menu">
-            <img src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> sluit
+            <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"> sluit
         </button>
     </nav>
 
     <button class="open-menu">
-        <img src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> menu
+        <img src="/src/assets/icon-bordeaux.svg" alt="" width="30" height="30"> menu
     </button>
 </header>
 
@@ -176,4 +405,4 @@
     nav.open {
         translate: 0% 0%;
     }
-</style>
+</style> -->

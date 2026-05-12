@@ -154,11 +154,11 @@ const sections = [
     gap: 30px;
     width: 100%;
     align-items: flex-start;
-    padding: 100px 16px 40px 8px;
+    padding: 2em 1em 0 1em;
 
     @media (min-width: 768px) {
       gap: 60px;
-      padding: 250px 60px 40px 60px;
+      padding: 4em 2em 0 2em;
     }
   }
 
@@ -168,11 +168,12 @@ const sections = [
     font-weight: normal;
     font-size: clamp(var(--font-size-s), 6vw, var(--font-size-m));
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     margin-left: 0;
 
     @media (min-width: 768px) {
       margin-left: -200px;
+      text-align: center;
     }
   }
 
@@ -191,14 +192,15 @@ const sections = [
     font-family: var(--font-anastasia-italic);
     color: var(--primary-bordeaux);
     font-weight: normal;
-    font-size: clamp(var(--font-size-base), 3vw, var(--font-size-l));
+    font-size: clamp(var(--font-size-m), 3vw, var(--font-size-l));
     margin-bottom: 1rem;
-    padding: 0 1.5rem;
+    text-align: left;
   }
 
-  .body-text {
+  .body-text, .contact-text {
     line-height: 1.7;
-    color: var(--neutral-browngreen)
+    color: var(--neutral-browngreen);
+    font-family: var(--font-inter-light);
   }
 
   .contact-text a {
