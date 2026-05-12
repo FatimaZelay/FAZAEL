@@ -1,16 +1,39 @@
+<script>
+    import { gsap } from "gsap";
+    import SplitText from "gsap/SplitText";
+
+    gsap.registerPlugin(SplitText);
+
+    const menu = document.querySelector("#menu");
+
+    menu?.addEventListener("toggle", () => {
+
+        if (menu.matches(":popover-open")) {
+
+            const split = new SplitText(".nav-items", {
+                type: "words"
+            });
+
+            gsap.from(split.words, {
+                duration: 1,
+                y: 50,
+                stagger: 0.05,
+                ease: "power2.out"
+            });
+        }
+    });
+</script>
+</script>
+
 <header>
     <nav popover id="menu">
-        <a class="logo-desktop" href="/">
-            <img src="/images/3.svg" alt="Logo of FAZAEL CO" width="150" height="75">
-        </a>
-
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/ourwork">Our work</a></li>
-            <li><a href="/aboutus">About us</a></li>
-            <li><a href="/workethic">Work ethic</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contact">Contact us</a></li>
+            <li><a class="nav-items" href="/">Home</a></li>
+            <li><a class="nav-items" href="/ourwork">Our work</a></li>
+            <li><a class="nav-items" href="/aboutus">About us</a></li>
+            <li><a class="nav-items" href="/workethic">Work ethic</a></li>
+            <li><a class="nav-items" href="/blog">Blog</a></li>
+            <li><a class="nav-items" href="/contact">Contact us</a></li>
         </ul>
 
         <button class="close-menu" popovertarget="menu" popovertargetaction="hide">
@@ -31,6 +54,48 @@
 </header>
 
 <style>
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        align-items: center;
+        font-size: clamp(var(--font-size-l), 6vw, var(--font-size-xxl));
+        color: var(--primary-bordeaux);
+    }
+
+    .nav-items {
+        transform: translateY(115px);
+        transition: transform 0.5s;
+    }
+
+    a {
+        font-family: var(--font-inter-bold);
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--primary-bordeaux);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 0.1em;
+        right: 0.1em;
+        display: flex;
+        flex-direction: column;
+        row-gap: .3em;
+        padding: 1em;
+        align-items: center;
+        font-family: var(--font-inter-regular);
+        color: var(--primary-bordeaux);
+    }
+
     .menu-mobile {
         display: flex;
         justify-content: space-between;
@@ -51,6 +116,19 @@
         color: var(--primary-bordeaux);
         padding: 1em;
     }
+
+    :popover-open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--primary-bone);
+        position: sticky;
+        inset: 0;
+        border: none;
+    }
+
 </style>
 <!-- <script>
     const menuButton = document.querySelector(".open-menu") as HTMLElement;
