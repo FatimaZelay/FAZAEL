@@ -28,11 +28,12 @@
 </script>
 
 <header>
+    <a class="logo-desktop" href="/">
+            <img class="img-desktop" src="/images/initials.svg" alt="Logo of FAZAEL" width="75" height="75">
+    </a>
     <nav class="menu-desktop">
-        <a class="logo-desktop" href="/">
-            <img src="/images/initials.svg" alt="Logo of FAZAEL" width="75" height="75">
-        </a>
-
+        
+       
         <ul class="links-desktop">
             <li><a class="nav-items-desktop" href="/">Home</a></li>
             <li><a class="nav-items-desktop" href="/ourwork">Our work</a></li>
@@ -60,12 +61,12 @@
 
 
     <nav class="menu-mobile">
-        <a class="logo-desktop" href="/">
-            <img src="/images/initials.svg" alt="Logo of FAZAEL" width="75" height="75">
+        <a class="logo-menu" href="/">
+            <img class="img-menu" src="/images/initials.svg" alt="Logo of FAZAEL" width="75" height="75">
         </a>
         
         <button class="open-menu" popovertarget="menu">
-            <img src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> menu
+            <img  src="/images/icon-bordeaux.svg" alt="" width="30" height="30"> menu
         </button>
     </nav>
 </header>
@@ -76,11 +77,14 @@
         display: flex;
         flex-direction: column;
         gap: 1.5em;
-        padding: 0;
-        margin: 0;
         @media (min-width: 768px) {
             display: block;
         }
+    }
+
+    .logo-desktop {
+            display: flex;
+    justify-content: center;
     }
 
     .menu-desktop {
@@ -88,12 +92,9 @@
         @media (min-width: 768px) {
             display: flex;
             flex-direction: row;
-            position: static;
             padding: 0;
-            background: none;
             justify-content: center;
             padding: 1em 0;
-            position: absolute;
         }
     }
 
@@ -102,9 +103,12 @@
         @media (min-width: 768px) {
             display: flex;
             flex-direction: row;
+            justify-content: center;
+            align-items: center;
             background-color: var(--neutral-white);
             width: 40em;
             border-radius: 1em;
+            padding: 1.5em;
             box-shadow: 1em 1em 1em var(--neutral-grey);
         }
     }
@@ -114,10 +118,9 @@
         text-decoration: none;
         text-transform: uppercase;
         color: var(--primary-bordeaux);
-        font-size: var(--font-size-xs);
     }
 
-    li {
+    .links li {
         align-items: center;
         font-size: clamp(var(--font-size-l), 6vw, var(--font-size-xxl));
         color: var(--primary-bordeaux);
@@ -149,6 +152,9 @@
         justify-content: space-between;
         position: sticky;
         top: 0;
+        @media (min-width: 768px) {
+            display: none;
+        }
     }
 
     button {
@@ -182,6 +188,19 @@
         }
     }
 
+    .img-desktop {
+        display: none;
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    .img-mobile {
+        display: block;
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
 
 </style>
 <!-- <script>
