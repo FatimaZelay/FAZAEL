@@ -15,10 +15,12 @@
             });
 
             gsap.from(split.words, {
-                duration: 1,
+                duration: 1.5,
+                delay: 0.1,
                 y: 50,
                 stagger: 0.05,
                 ease: "power2.out"
+
             });
         }
     });
@@ -26,8 +28,23 @@
 </script>
 
 <header>
+    <nav class="menu-desktop">
+        <a class="logo-desktop" href="/">
+            <img src="/images/initials.svg" alt="Logo of FAZAEL" width="75" height="75">
+        </a>
+
+        <ul class="links-desktop">
+            <li><a class="nav-items-desktop" href="/">Home</a></li>
+            <li><a class="nav-items-desktop" href="/ourwork">Our work</a></li>
+            <li><a class="nav-items-desktop" href="/aboutus">About us</a></li>
+            <li><a class="nav-items-desktop" href="/workethic">Work ethic</a></li>
+            <li><a class="nav-items-desktop" href="/blog">Blog</a></li>
+            <li><a class="nav-items-desktop" href="/contact">Contact us</a></li>
+        </ul>
+    </nav>
+
     <nav popover id="menu">
-        <ul>
+        <ul class="links">
             <li><a class="nav-items" href="/">Home</a></li>
             <li><a class="nav-items" href="/ourwork">Our work</a></li>
             <li><a class="nav-items" href="/aboutus">About us</a></li>
@@ -61,6 +78,43 @@
         gap: 1.5em;
         padding: 0;
         margin: 0;
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+
+    .menu-desktop {
+        display: none;
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            position: static;
+            padding: 0;
+            background: none;
+            justify-content: center;
+            padding: 1em 0;
+            position: absolute;
+        }
+    }
+
+    .links-desktop {
+        display: none;
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            background-color: var(--neutral-white);
+            width: 40em;
+            border-radius: 1em;
+            box-shadow: 1em 1em 1em var(--neutral-grey);
+        }
+    }
+
+    .links-desktop a {
+        font-family: var(--font-inter-regular);
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--primary-bordeaux);
+        font-size: var(--font-size-xs);
     }
 
     li {
@@ -69,18 +123,12 @@
         color: var(--primary-bordeaux);
     }
 
-    .nav-items {
-        transform: translateY(115px);
-        transition: transform 0.5s;
-    }
-
-    a {
+    .links a {
         font-family: var(--font-inter-bold);
         text-decoration: none;
         text-transform: uppercase;
         color: var(--primary-bordeaux);
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-
     }
 
     .close-menu {
@@ -115,6 +163,7 @@
         font-family: var(--font-inter-regular);
         color: var(--primary-bordeaux);
         padding: 1em;
+        
     }
 
     :popover-open {
@@ -127,7 +176,12 @@
         position: sticky;
         inset: 0;
         border: none;
+        transform: translateY(0);
+        @media (min-width: 768px) {
+            display: block;
+        }
     }
+
 
 </style>
 <!-- <script>
