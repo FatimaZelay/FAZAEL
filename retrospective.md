@@ -52,7 +52,7 @@ What is the most important thing we should start in the next iteration?
 Karima to Fatima: 
 
 Fatima to Karima: I really appreciate your ideas and dedication. You are understanding, fast in action and really organised. That's something i admire from you!
-
+Karima to Fatima: I appreciate your fast communication, always enthausiast and very creative. You're open for feedback and I appreciate the Instagram maintenance. 
 
 ### Picture of our whiteboards
 
