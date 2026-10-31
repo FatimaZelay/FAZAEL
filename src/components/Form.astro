@@ -7,13 +7,15 @@
     </header>
 
     <form class={`contact-form ${variant}`}>
-        <div class="contact-row">
+        <li class="contact-row">
             <input class="contact-input" type="text" name="name" placeholder="name" />
             <input class="contact-input" type="email" name="email" placeholder="e-mail" />
-        </div>
+        </li>
 
         <input class="contact-input contact-input--message" type="text" name="message" placeholder="message" />
 
+        <p class="contact-privacy">Would you like to know how we use and protect your personal data? Please read our <a href="/privacy">Privacy statement</a>.</p>
+        
         <button class="contact-submit" type="submit">submit</button>
     </form>
 </section>
@@ -146,5 +148,44 @@
 .contact.page {
     margin: 0;
     padding: 0 1.5rem 4rem 1.5rem;
+}
+
+.contact-privacy {
+    font-family: var(--font-inter-light);
+    font-size: 1em;
+    color: var(--neutral-black);
+    text-align: center;
+    margin-bottom: 2rem;
+
+    a {
+        color: var(--primary-bordeaux);
+        text-decoration: none;
+        font-weight: 900;
+    }
+}
+
+a {
+    color: var(--primary-bordeaux);
+    text-decoration: none;
+    font-weight: 900;
+    &:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        @media (min-width: 400px) {
+            background-image: linear-gradient(var(--primary-bordeaux), var(--primary-bordeaux));
+            background-size: 0% .1em;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+
+            @media (prefers-reduced-motion:no-preference) {
+                transition: background-size 0.3s ease;
+            }
+
+            &:hover {
+                background-size: 100% .1em;
+                text-decoration: none;
+            }
+        }
 }
 </style>
