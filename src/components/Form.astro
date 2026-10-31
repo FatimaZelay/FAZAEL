@@ -7,14 +7,14 @@
     </header>
 
     <form class={`contact-form ${variant}`}>
-        <li class="contact-row">
+        <div class="contact-row">
             <input class="contact-input" type="text" name="name" placeholder="name" />
             <input class="contact-input" type="email" name="email" placeholder="e-mail" />
-        </li>
+        </div>
 
         <input class="contact-input contact-input--message" type="text" name="message" placeholder="message" />
 
-        <p class="contact-privacy">Would you like to know how we use and protect your personal data? Please read our <a href="/privacy">Privacy statement</a>.</p>
+        <p class={`contact-privacy ${variant}`}>Would you like to know how we use and protect your personal data? Please read our <a href="/privacy">Privacy statement</a>.</p>
         
         <button class="contact-submit" type="submit">submit</button>
     </form>
@@ -126,29 +126,6 @@
     }
 }
 
-/* Additional styling for the page variant */
-.contact-header.page {
-    margin-top: 5em;
-    @media (min-width: 768px) {
-        margin-top: 10em;
-    }
-}
-.contact-form.page .contact-row {
-    flex-direction: column;
-}
-
-.contact-form.page .contact-input {
-    text-align: left;
-    color: var(--primary-bordeaux);
-    @media (min-width: 768px) {
-        width: 25em;
-    }
-}
-
-.contact.page {
-    margin: 0;
-    padding: 0 1.5rem 4rem 1.5rem;
-}
 
 .contact-privacy {
     font-family: var(--font-inter-light);
@@ -187,5 +164,32 @@ a {
                 text-decoration: none;
             }
         }
+}
+
+/* Additional styling for the page variant */
+.contact-form.page {
+    align-items: center;
+}
+
+.contact-form.page .contact-row {
+    flex-direction: column;
+    align-items: center;   
+    gap: 3rem;            
+    margin-bottom: 3rem;
+}
+
+.contact-form.page .contact-input,
+.contact-form.page .contact-input--message {
+    text-align: left;
+    color: var(--primary-bordeaux);
+    width: 100%;
+    max-width: 30em; 
+    padding: 1.5rem 0;
+}
+
+.contact-privacy.page {
+    text-align: center;
+    max-width: 30em;
+    margin: 0 auto 2rem auto;
 }
 </style>
