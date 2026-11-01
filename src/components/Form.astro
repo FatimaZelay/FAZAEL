@@ -14,6 +14,8 @@
 
         <input class="contact-input contact-input--message" type="text" name="message" placeholder="message" />
 
+        <p class={`contact-privacy ${variant}`}>Would you like to know how we use and protect your personal data? Please read our <a href="/privacy">Privacy statement</a>.</p>
+        
         <button class="contact-submit" type="submit">submit</button>
     </form>
 </section>
@@ -124,27 +126,70 @@
     }
 }
 
-/* Additional styling for the page variant */
-.contact-header.page {
-    margin-top: 5em;
-    @media (min-width: 768px) {
-        margin-top: 10em;
+
+.contact-privacy {
+    font-family: var(--font-inter-light);
+    font-size: 1em;
+    color: var(--neutral-black);
+    text-align: center;
+    margin-bottom: 2rem;
+
+    a {
+        color: var(--primary-bordeaux);
+        text-decoration: none;
+        font-weight: 900;
     }
 }
+
+a {
+    color: var(--primary-bordeaux);
+    text-decoration: none;
+    font-weight: 900;
+    &:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        @media (min-width: 400px) {
+            background-image: linear-gradient(var(--primary-bordeaux), var(--primary-bordeaux));
+            background-size: 0% .1em;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+
+            @media (prefers-reduced-motion:no-preference) {
+                transition: background-size 0.3s ease;
+            }
+
+            &:hover {
+                background-size: 100% .1em;
+                text-decoration: none;
+            }
+        }
+}
+
+/* Additional styling for the page variant */
+.contact-form.page {
+    align-items: center;
+}
+
 .contact-form.page .contact-row {
     flex-direction: column;
+    align-items: center;   
+    gap: 3rem;            
+    margin-bottom: 3rem;
 }
 
-.contact-form.page .contact-input {
+.contact-form.page .contact-input,
+.contact-form.page .contact-input--message {
     text-align: left;
     color: var(--primary-bordeaux);
-    @media (min-width: 768px) {
-        width: 25em;
-    }
+    width: 100%;
+    max-width: 30em; 
+    padding: 1.5rem 0;
 }
 
-.contact.page {
-    margin: 0;
-    padding: 0 1.5rem 4rem 1.5rem;
+.contact-privacy.page {
+    text-align: center;
+    max-width: 30em;
+    margin: 0 auto 2rem auto;
 }
 </style>
