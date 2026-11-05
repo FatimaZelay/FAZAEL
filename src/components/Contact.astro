@@ -4,6 +4,13 @@
     import ScrollBar from '../components/ScrollBar.astro';
     import Banner from '../components/Banner.astro';
 ---
+
+<section class="intro">
+    <h1>Get in touch with <em>us.</em></h1>
+    <p>Got a vision for your business?</p>
+    <p>Let's build it together.</p>
+</section>
+
 <script>
     import gsap from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
@@ -15,17 +22,17 @@
 
     mm.add("(prefers-reduced-motion: no-preference)", () => {
 
-        const split = new SplitText("p", { type: "words" });
+        const split = new SplitText("intro p", { type: "words" });
 
-        gsap.from(split.words,{
-            opacity: 0.2,
-            stagger: {each: 0.4},
-            scrollTrigger: {
-                trigger: "p",
-                start: "top 50%",
-                end: "top 5%",
-                scrub: true,
-            },
+        gsap.from(split.words, {
+    opacity: 0.2,
+    stagger: { each: 0.4 },
+    scrollTrigger: {
+        trigger: ".intro",
+        start: "top 50%",
+        end: "top 5%",
+        scrub: true,
+    },
         }
         );
     });
